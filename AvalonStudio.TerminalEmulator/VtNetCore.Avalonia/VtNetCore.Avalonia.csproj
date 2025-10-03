@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>preview</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Core Avalonia packages -->
+    <PackageReference Include="Avalonia" Version="11.3.6" />
+    <PackageReference Include="Avalonia.Controls.DataGrid" Version="11.3.6" />
+    <PackageReference Include="Avalonia.Desktop" Version="11.3.6" />
+    <PackageReference Include="Avalonia.ReactiveUI" Version="11.3.6" />
+
+    <!-- If terminal code depends on reactive extensions -->
+    <PackageReference Include="System.Reactive" Version="6.0.2" />
+  </ItemGroup>
+
+</Project>

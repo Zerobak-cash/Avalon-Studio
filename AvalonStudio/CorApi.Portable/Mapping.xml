@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+// Copyright (c) 2010-2014 SharpGen.Runtime - Alexandre Mutel
+// 
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+// 
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+// 
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
+-->
+<config id="icordebug" xmlns="urn:SharpGen.Config">
+
+  <include-dir>C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.2\Include\um</include-dir>
+  <sdk name="StdLib" />
+  <sdk name="WindowsSdk" version="10.0.14393.0" />
+
+  <namespace>CorApi.Portable</namespace>
+  <assembly>CorDebug</assembly>
+
+  <include file="windows.h" />
+  
+  <include file="winbase.h" namespace="CorApi.Portable.Win32" output="Win32">
+    <attach>DEBUG_EVENT</attach>
+  </include>
+
+  <include file="cor.h" attach="true" />
+  <include file="corHdr.h" attach="true" />
+  <include file="cordebug.h" attach="true"/>
+
+  <mapping>
+
+    <remove function="_Cor.+" />
+    <remove function="CoInitializeEE" />
+    <remove function="CoUninitializeEE" />
+    <remove function="CoEEShutDownCOM" />
+    <remove function="CoInitializeCor" />
+    <remove function="CoUninitializeCor" />
+
+    <remove field="IMAGE_COR_ILMETHOD_SECT_EH_CLAUSE_SMALL::Flags" />
+
+    <map interface="ICorDebug(.*)" name="$1" />
+    <map interface="ICorDebugManagedCallback" callback="true" />
+    <map interface="ICorDebugManagedCallback([0-9]+)" name="ManagedCallback$1" callback="true" />
+    <map method="ICorDebugManagedCallback[0-9]*::(.+)" name="On$1" />
+    <remove interface="ICorDebugUnmanagedCallback" />
+    <remove method="ICorDebug::SetUnmanagedHandler" />
+    <remove method="ICorDebug::CreateProcessW" />
+    <remove method="ICorDebugRemote::CreateProcessEx" />
+    <map interface="ICorDebug([0-9]*)" name="LocalDebugger$1" />
+    <map interface="ICorDebugRemote([0-9]*)" name="RemoteDebugger$1" />
+     <map param="ICorDebugAppDomain::GetName::pcchName" attribute="out" />
+    <map param="ICorDebugAppDomain::GetName::szName" type="void" attribute="in" />
+     <map param="ICorDebugAssembly::GetName::pcchName" attribute="out" />
+    <map param="ICorDebugAssembly::GetName::szName" type="void" attribute="in" />
+     <map param="ICorDebugModule::GetName::pcchName" attribute="out" />
+    <map param="ICorDebugModule::GetName::szName" type="void" attribute="in" />
+     <map param="ICorDebugMDA::GetName::pcchName" attribute="out" />
+    <map param="ICorDebugMDA::GetName::szName" type="void" attribute="in" />
+    <map param="ICorDebugStringValue::GetString::pcchString" attribute="out" />
+    <map param="ICorDebugStringValue::GetString::szString" attribute="out" />
+     <map param="ICorDebugMDA::GetXML::pcchName" attribute="out" />
+    <map param="ICorDebugMDA::GetXML::szName" type="void" attribute="in" />
+    <map param="ICorDebugProcess::GetID::pdwProcessId" attribute="out" />
+    <map param="ICorDebugThread::GetID::pdwThreadId" attribute="out" />
+    <map param="ICorDebugAppDomain::GetID::pId" attribute="out" />
+    <map param="ICorDebugController::HasQueuedCallbacks::pbQueued" attribute="out" />
+    <map param="ICorDebugProcess2::GetDesiredNGENCompilerFlags::pdwFlags" type="CorDebugJITCompilerFlags" attribute="out" />
+    <map param="ICorDebugProcess2::SetDesiredNGENCompilerFlags::pdwFlags" type="CorDebugJITCompilerFlags" />
+    <map param="ICorDebugController::IsRunning::pbRunning" attribute="out" />
+    <map param="ICorDebugStepper::IsActive::pbActive" attribute="out" />
+    <map param="ICorDebugStepper::StepRange::ranges" attribute="in buffer" />
+    <map param="ICorDebugModule2::SetJMCStatus::pTokens" attribute="in buffer"/>
+    <map param="ICorDebugModule2::GetJITCompilerFlags::pdwFlags" attribute="out" type="CorDebugJITCompilerFlags" />
+    <map param="ICorDebugModule2::SetJITCompilerFlags::dwFlags" type="CorDebugJITCompilerFlags" />
+    <map param="ICorDebugThreadEnum::Next::threads" attribute="out buffer" />
+    <map param="ICorDebugThreadEnum::Next::pceltFetched" attribute="out" />
+    <map param="ICorDebugChainEnum::Next::chains" attribute="out buffer" />
+    <map param="ICorDebugChainEnum::Next::pceltFetched" attribute="out" />
+    <map param="ICorDebugFrameEnum::Next::frames" attribute="out buffer" />
+    <map param="ICorDebugFrameEnum::Next::pceltFetched" attribute="out" /> <!-- TODO is in buffer correct might be out buffer. -->
+    <map param="ICorDebugTypeEnum::Next::values" attribute="out buffer" />
+    <map param="ICorDebugTypeEnum::Next::pceltFetched" attribute="out" />
+    <map param="ICorDebugProcessEnum::Next::processes" attribute="out buffer" />
+    <map param="ICorDebugProcessEnum::Next::pceltFetched" attribute="out" />
+    <map param="ICorDebugFunction::GetToken::pMethodDef" attribute="out" />
+    <map param="ICorDebugNativeFrame::GetIP::pnOffset" attribute="out" />
+    <map param="ICorDebugChain::IsManaged::pManaged" attribute="out" />
+    <map param="ICorDebugInternalFrame::GetFrameType::pType" attribute="out" />
+    <map method="ICorDebugType::GetType" visibility="public" name="DebugType" property="true" />
+    <map param="ICorDebugType::GetType::ty" attribute="out" />
+    <map param="ICorDebugType::GetRank::pnRank" attribute="out" />
+    <map param="ICorDebugClass::GetToken::pTypeDef" attribute="out" />
+    <map param="ICorDebugEnum::GetCount::pcelt" attribute="out" />
+    <map param="ICorDebugILFrame::CanSetIP::nOffset" attribute="out" />
+    <map param="ICorDebugReferenceValue::IsNull::pbNull" attribute="out" />
+    <map param="ICorDebugReferenceValue::Dereference::ppValue" attribute="out" return="true" />
+    <map method="ICorDebugReferenceValue::GetValue" visibility="public" />
+    <map param="ICorDebugObjectValue::GetFieldValue::ppValue" attribute="out" return="true" />
+    <map param="ICorDebugEval2::NewParameterizedArray::dims" attribute="in" />
+    <map param="ICorDebugEval2::NewParameterizedArray::lowBounds" attribute="in optional" />
+    <map param="ICorDebugILFrame::GetIP::pMappingResult" attribute="out" />
+    <map param="ICorDebugILFrame::GetIP::pnOffset" attribute="out" />
+    <map param="ICorDebugValue::GetAddress::pAddress" attribute="out" />
+    <map param="ICorDebugModule::GetFunctionFromToken::ppFunction" attribute="out" return="true" />
+    <map param="ICorDebugCode::CreateBreakpoint::ppBreakpoint" attribute="out" return="true" />
+    <map param="ICorDebugThread::CreateEval::ppEval" attribute="out" return="true" />
+    <map param="ICorDebugModule::GetClassFromToken::ppClass" attribute="out" return="true" />
+    <map param="ICorDebugClass2::GetParameterizedType::ppType" attribute="out" />
+    <map param="ICorDebugClass2::GetParameterizedType::ppTypeArgs" attribute="in buffer" />
+    <map param="ICorDebugStringValue::GetLength::pcchString" attribute="out" />
+    <map param="ICorDebugValue::GetType::pType" attribute="out" />
+    <map param="ICorDebugValue::GetSize::pSize" attribute="out" />
+    <map param="ICorDebugArrayValue::GetDimensions::dims" attribute="out buffer" />
+    <map param="ICorDebugArrayValue::GetRank::pnRank" attribute="out" />
+    <map param="ICorDebugArrayValue::HasBaseIndicies::pbHasBaseIndicies" attribute="out" return="true" />
+    <map param="ICorDebugObjectValue::IsValueClass::pbIsValueClass" attribute="out" />
+    <map param="ICorDebugArrayValue::GetBaseIndicies::indicies" attribute="out buffer" />
+    <map param="ICorDebugArrayValue::GetElement::indices" attribute="in buffer" />
+    <map param="ICorDebugArrayValue::GetElement::ppValue" attribute="out" return="true" />
+    <map param="ICorDebugEval::CreateValue::ppValue" attribute="out" return="true" />
+    <map param="ICorDebugEval2::NewParameterizedObject::ppTypeArgs" attribute="in buffer" />
+    <map param="ICorDebugEval2::NewParameterizedObject::ppArgs" attribute="in buffer" />
+    <map param="ICorDebugEval2::CallParameterizedFunction::ppTypeArgs" attribute="in buffer" />
+    <map param="ICorDebugEval2::CallParameterizedFunction::ppArgs" attribute="in buffer" />
+    <map param="ICorDebugMDA::GetFlags::pFlags" attribute="out" />
+    <map method="ICorDebugController::Continue" name="ContinueImpl" />
+    <map method="ICorDebugThread::GetProcess" property="false" />
+    <map method="ICorDebugAppDomain::GetProcess" property="false" />
+    <map method="ICorDebugModule::GetProcess" property="false" />
+    <map param="IMetaDataImport::GetCustomAttributeByName::ppData" attribute="out" />
+    <map param="IMetaDataImport::GetCustomAttributeByName::pcbData" attribute="out" />
+    <map param="IMetaDataImport::GetMethodProps::pClass" attribute="out"/>
+    <map param="IMetaDataImport::GetMethodProps::pClass" attribute="out"/>
+    <map param="IMetaDataImport::GetMethodProps::pchMethod" attribute="out"/>
+    <map param="IMetaDataImport::GetMethodProps::pdwAttr" attribute="out"/>
+    <map param="IMetaDataImport::GetMethodProps::ppvSigBlob" attribute="out" type="void"/>
+    <map param="IMetaDataImport::GetMethodProps::pcbSigBlob" attribute="out" />
+    <map param="IMetaDataImport::GetMethodProps::pulCodeRVA" attribute="out"/>
+    <map param="IMetaDataImport::GetMethodProps::pdwImplFlags" attribute="out"/>
+    <map param="IMetaDataImport::GetParamProps::pmd" attribute="out" />
+    <map param="IMetaDataImport::GetParamProps::pulSequence" attribute="out" />
+    <map param="IMetaDataImport::GetParamProps::szName" attribute="out" />
+    <map param="IMetaDataImport::GetParamProps::pchName" attribute="out" />
+    <map param="IMetaDataImport::GetParamProps::pdwAttr" attribute="out" />
+    <map param="IMetaDataImport::GetParamProps::pdwCPlusTypeFlag" attribute="out" />
+    <map param="IMetaDataImport::GetParamProps::ppValue" attribute="out" />
+    <map param="IMetaDataImport::GetParamProps::pcchValue" attribute="out" />
+    <map param="IMetaDataImport::CountEnum::pulCount" attribute="out" />
+    <map param="IMetaDataImport::GetScopeProps::pchName" attribute="out" />
+    <map param="IMetaDataImport::GetScopeProps::pmvid" attribute="out optional"  />
+    <map param="IMetaDataImport::GetTypeRefProps::ptkResolutionScope" attribute="out" />
+    <map param="IMetaDataImport::GetTypeRefProps::szName" attribute="out" />
+    <map param="IMetaDataImport::GetTypeRefProps::pchName" attribute="out" />
+    <map param="IMetaDataImport::GetUserString::szString" attribute="out"/>
+    <map param="IMetaDataImport::GetUserString::pchString" attribute="out" />
+    <map param="IMetaDataImport::FindTypeDefByName::ptd" attribute="out"/>
+    <map param="IMetaDataImport::GetTypeDefProps::szTypeDef" attribute="out" />
+    <map param="IMetaDataImport::GetTypeDefProps::pchTypeDef" attribute="out" />
+    <map param="IMetaDataImport::GetTypeDefProps::pdwTypeDefFlags" attribute="out" />
+    <map param="IMetaDataImport::GetTypeDefProps::ptkExtends" attribute="out" />
+    <map param="IMetaDataImport::GetMemberRefProps::ptk" attribute="out" />
+    <map param="IMetaDataImport::GetMemberRefProps::szMember" attribute="out" />
+    <map param="IMetaDataImport::GetMemberRefProps::pchMember" attribute="out" />
+    <map param="IMetaDataImport::GetMemberRefProps::ppvSigBlob" attribute="out" type="void" />
+    <map param="IMetaDataImport::GetMemberRefProps::pbSig" attribute="out" />
+    <map param="IMetaDataImport::EnumParams::phEnum" attribute="out" />
+    <map param="IMetaDataImport::EnumParams::rParams" attribute="out buffer" />
+    <map param="IMetaDataImport::EnumParams::pcTokens" attribute="out" />
+    <map param="IMetaDataImport2::EnumGenericParams::phEnum" attribute="out" />
+    <map param="IMetaDataImport2::EnumGenericParams::rGenericParams" attribute="out buffer" />
+    <map param="IMetaDataImport2::EnumGenericParams::pcGenericParams" attribute="out" />
+    <map param="IMetaDataImport2::GetGenericParamProps::pulParamSeq" attribute="out" />
+    <map param="IMetaDataImport2::GetGenericParamProps::pdwParamFlags" attribute="out" />
+    <map param="IMetaDataImport2::GetGenericParamProps::reserved" attribute="out" />
+    <map param="IMetaDataImport2::GetGenericParamProps::wzname" attribute="out" />
+    <map param="IMetaDataImport2::GetGenericParamProps::pchName" attribute="out" />
+    <map param="IMetaDataImport2::GetGenericParamProps::ptOwner" attribute="out" />
+    <map param="IMetaDataImport::GetNestedClassProps::ptdEnclosingClass" attribute="out" />
+    <map param="IMetaDataImport::EnumTypeDefs::phEnum" attribute="in out" /> <!-- TODO This is in and out??? i.e. ref -->
+    <map param="IMetaDataImport::EnumTypeDefs::rgTypeDefs" attribute="out buffer" />
+    <map param="IMetaDataImport::EnumTypeDefs::pcTypeDefs" attribute="out" />
+    <map param="IMetaDataImport::EnumFields::phEnum" attribute="out" />
+    <map param="IMetaDataImport::EnumFields::rFields" attribute="out buffer" />
+    <map param="IMetaDataImport::EnumFields::pcTokens" attribute="out" />
+    <map param="IMetaDataImport::GetFieldProps::pClass" attribute="out" />
+    <map param="IMetaDataImport::GetFieldProps::szField" attribute="out" />
+    <map param="IMetaDataImport::GetFieldProps::pchField" attribute="out" />
+    <map param="IMetaDataImport::GetFieldProps::pdwAttr" attribute="out" />
+    <map param="IMetaDataImport::GetFieldProps::ppvSigBlob" attribute="out" type="void" />
+    <map param="IMetaDataImport::GetFieldProps::pcbSigBlob" attribute="out" />
+    <map param="IMetaDataImport::GetFieldProps::pdwCPlusTypeFlag" attribute="out" />
+    <map param="IMetaDataImport::GetFieldProps::ppValue" attribute="out" />
+    <map param="IMetaDataImport::GetFieldProps::pcchValue" attribute="out" />
+    <map param="IMetaDataImport::EnumProperties::phEnum" attribute="out" />
+    <map param="IMetaDataImport::EnumProperties::rProperties" attribute="out buffer" />
+    <map param="IMetaDataImport::EnumProperties::pcProperties" attribute="out" />
+    <map param="IMetaDataImport::EnumInterfaceImpls::phEnum" attribute="out" />
+    <map param="IMetaDataImport::EnumInterfaceImpls::rImpls" attribute="out buffer" />
+    <map param="IMetaDataImport::EnumInterfaceImpls::pcImpls" attribute="out" />
+    <map param="IMetaDataImport::GetInterfaceImplProps::pClass" attribute="out" />
+    <map param="IMetaDataImport::GetInterfaceImplProps::ptkIface" attribute="out" />
+    <map param="IMetaDataImport::EnumMethods::phEnum" attribute="out" />
+    <map param="IMetaDataImport::EnumMethods::rMethods" attribute="out buffer" />
+    <map param="IMetaDataImport::EnumMethods::pcTokens" attribute="out" />
+    <map param="IMetaDataImport::EnumTypeDefs::phEnum" attribute="out" />
+    <map param="IMetaDataImport::EnumTypeDefs::rTypeDefs" attribute="out buffer" />
+    <map param="IMetaDataImport::EnumTypeDefs::pcTypeDefs" attribute="out" />
+    <map param="IMetaDataImport::GetPropertyProps::pClass" attribute="out" />
+    <map param="IMetaDataImport::GetPropertyProps::szProperty" attribute="out" />
+    <map param="IMetaDataImport::GetPropertyProps::pchProperty" attribute="out" />
+    <map param="IMetaDataImport::GetPropertyProps::pdwPropFlags" attribute="out" />
+    <map param="IMetaDataImport::GetPropertyProps::ppvSig" attribute="out" type="void" />
+    <map param="IMetaDataImport::GetPropertyProps::pbSig" attribute="out" />
+    <map param="IMetaDataImport::GetPropertyProps::pdwCPlusTypeFlag" attribute="out" />
+    <map param="IMetaDataImport::GetPropertyProps::ppDefaultValue" attribute="out" />
+    <map param="IMetaDataImport::GetPropertyProps::pcchDefaultValue" attribute="out" />
+    <map param="IMetaDataImport::GetPropertyProps::pmdSetter" attribute="out" />
+    <map param="IMetaDataImport::GetPropertyProps::pmdGetter" attribute="out" />
+    <map param="IMetaDataImport::GetPropertyProps::rmdOtherMethod" attribute="out buffer" />
+    <map param="IMetaDataImport::GetPropertyProps::pcOtherMethod" attribute="out" />    
+    <map param="ICorDebugType::GetBase::pBase" attribute="out" />
+  </mapping>
+
+</config>

@@ -1,0 +1,12 @@
+<UserControl x:Class="AvalonStudio.Controls.Standard.Terminal.TerminalView"
+             xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vt100="clr-namespace:VtNetCore.Avalonia;assembly=VtNetCore.Avalonia">
+    <Panel>
+        <TextBlock Text="Terminal is not connected." VerticalAlignment="Center" HorizontalAlignment="Center" />
+        <vt100:VirtualTerminalControl Connection="{Binding Connection}" 
+                                      Terminal="{Binding Terminal}"
+                                      IsVisible="{Binding TerminalVisible}" 
+                                      FontFamily="{DynamicResource EditorFont}" />
+    </Panel>
+</UserControl>

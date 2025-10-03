@@ -1,0 +1,11 @@
+﻿<UserControl x:Class="ShellExampleApp.WelcomeScreenView"
+             xmlns="https://github.com/avaloniaui"
+              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"             
+             Background="{DynamicResource ThemeBackgroundBrush}">
+    <Grid>
+        <StackPanel>
+            <TextBlock Text="AvalonStudio Shell" FontSize="20" />
+            <TextBlock Text="more info at: http://github.com/VitalElement/AvalonStudio.Shell" />
+        </StackPanel>
+    </Grid>
+</UserControl>

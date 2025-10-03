@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+	<NoWarn>NU1605</NoWarn>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <TargetLatestRuntimePatch>true</TargetLatestRuntimePatch>
+    <TieredCompilation>True</TieredCompilation>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <AvaloniaResource Include="**\*.resx;**\*.xaml;Assets\*;" Exclude="bin\**;obj\**;**\*.xproj;packages\**;@(EmbeddedResource)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Avalonia" Version="11.3.6" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\Avalonia.Designer.HostApp\Avalonia.Designer.HostApp.csproj" />
+    <ProjectReference Include="..\Avalonia.Ide\src\Avalonia.Ide.CompletionEngine.DnlibMetadataProvider\Avalonia.Ide.CompletionEngine.DnlibMetadataProvider.csproj" />
+    <ProjectReference Include="..\Avalonia.Ide\src\Avalonia.Ide.CompletionEngine\Avalonia.Ide.CompletionEngine.csproj" />
+    <ProjectReference Include="..\AvalonStudio.Controls.Standard\AvalonStudio.Controls.Standard.csproj" />
+    <ProjectReference Include="..\AvalonStudio.Extensibility.Editor\AvalonStudio.Extensibility.Editor.csproj" />
+    <ProjectReference Include="..\AvalonStudio.Extensibility\AvalonStudio.Extensibility.csproj" />
+  </ItemGroup>
+
+</Project>

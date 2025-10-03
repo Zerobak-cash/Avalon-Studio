@@ -1,0 +1,28 @@
+<Project>
+  <PropertyGroup>
+    <!-- Core Avalonia version -->
+    <AvaloniaVersion>11.3.6</AvaloniaVersion>
+    <!-- Avalonia.Xaml.* version (latest available) -->
+    <AvaloniaXamlVersion>11.3.0.6</AvaloniaXamlVersion>
+	<NoWarn>$(NoWarn);NU1605</NoWarn>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningsAsErrors>false</WarningsAsErrors>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Core Avalonia packages (update existing references) -->
+    <PackageReference Update="Avalonia" Version="$(AvaloniaVersion)" />
+    <PackageReference Update="Avalonia.Desktop" Version="$(AvaloniaVersion)" />
+    <PackageReference Update="Avalonia.Themes.Fluent" Version="$(AvaloniaVersion)" />
+    <PackageReference Update="Avalonia.Controls.DataGrid" Version="$(AvaloniaVersion)" />
+    <PackageReference Update="Avalonia.Diagnostics" Version="$(AvaloniaVersion)" />
+    
+    <!-- Avalonia.Xaml.* packages (add if missing, or override version if exists) -->
+    <PackageReference Include="Avalonia.Xaml.Interactivity" Version="$(AvaloniaXamlVersion)" />
+    <PackageReference Include="Avalonia.Xaml.Interactions" Version="$(AvaloniaXamlVersion)" />
+    <PackageReference Include="Avalonia.Xaml.Interactions.Custom" Version="$(AvaloniaXamlVersion)" />
+    <PackageReference Include="Avalonia.Xaml.Behaviors" Version="$(AvaloniaXamlVersion)" />
+  </ItemGroup>
+
+</Project>
+

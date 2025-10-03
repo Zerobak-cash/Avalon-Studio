@@ -1,0 +1,19 @@
+<UserControl x:Class="AvalonStudio.Debugging.Controls.RegistersView"
+             xmlns="https://github.com/avaloniaui"
+              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"             
+             xmlns:vm="clr-namespace:AvalonStudio.Debugging.Controls">
+    <Grid>
+        <ListBox BorderThickness="0" Items="{Binding Model}" Background="{DynamicResource ThemeControlBackgroundBrush}"
+                 VirtualizationMode="None">
+            <ListBox.DataTemplates>
+                <DataTemplate DataType="vm:RegisterViewModel">
+                    <StackPanel Orientation="Horizontal" Spacing="5" Background="{Binding Background}">
+                        <TextBlock Text="{Binding Name}" Width="90" Foreground="#FF007ACC" HorizontalAlignment="Left" />
+                        <TextBlock Text="{Binding Value}" Foreground="#4EC9B0" HorizontalAlignment="Right" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.DataTemplates>
+        </ListBox>
+        <Panel Background="#10FFFFFF" IsVisible="{Binding !Enabled}" />
+    </Grid>
+</UserControl>

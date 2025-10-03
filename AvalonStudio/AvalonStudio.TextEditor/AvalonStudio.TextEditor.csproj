@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="**\*.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Rendering\TextView.paml" />
+    <EmbeddedResource Include="TextEditor.paml" />
+    <EmbeddedResource Include="TextEditorTheme.paml" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Avalonia" Version="11.3.6" />
+    <PackageReference Include="Avalonia.AvaloniaEdit" Version="11.3.6" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.9" />
+    <PackageReference Include="System.ComponentModel.TypeConverter" Version="4.3.0" />
+    <PackageReference Include="System.Globalization" Version="4.3.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+</Project>

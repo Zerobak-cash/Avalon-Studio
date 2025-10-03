@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+	<NoWarn>NU1605</NoWarn>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+  </PropertyGroup>
+
+<ItemGroup>
+  <PackageReference Include="Avalonia.Xaml.Interactivity" Version="$(AvaloniaXamlVersion)" />
+  <PackageReference Include="Avalonia.Xaml.Interactions" Version="$(AvaloniaXamlVersion)" />
+  <PackageReference Include="Avalonia.Xaml.Interactions.Custom" Version="$(AvaloniaXamlVersion)" />
+  <PackageReference Include="Avalonia.Xaml.Behaviors" Version="$(AvaloniaXamlVersion)" />
+</ItemGroup>
+
+
+</Project>

@@ -1,0 +1,39 @@
+﻿<UserControl x:Class="AvalonStudio.Toolchains.PublishedGCC.PublishedToolchainSettingsView"
+             xmlns="https://github.com/avaloniaui"
+              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <UserControl.Styles>
+        <Style Selector="TextBox">
+            <Setter Property="UseFloatingWatermark" Value="True" />
+        </Style>
+    </UserControl.Styles>
+    <StackPanel Spacing="4" Orientation="Horizontal">
+        <StackPanel Spacing="4">
+            <ListBox Items="{Binding AvailableToolchains}" SelectedItem="{Binding SelectedPackage}" />
+        </StackPanel>
+
+        <StackPanel Spacing="4">
+            <TextBlock Text="Selected Toolchain" />
+            
+            <StackPanel Orientation="Horizontal" Spacing="2">
+                <TextBlock Text="Name:" />
+                <TextBlock Text="{Binding SelectedId}" />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Spacing="2">
+                <TextBlock Text="Description:" />
+                <TextBlock Text="N/A" />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Spacing="2">
+                <TextBlock Text="Version:" />
+                <DropDown Items="{Binding Versions}" SelectedItem="{Binding SelectedVersion}">
+                    <DropDown.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Version}" />
+                        </DataTemplate>
+                    </DropDown.ItemTemplate>
+                </DropDown>
+            </StackPanel>
+        </StackPanel>
+    </StackPanel>
+</UserControl>

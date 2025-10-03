@@ -1,0 +1,17 @@
+﻿<Project ToolsVersion="15.0" Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\..\Version.props" />
+  <PropertyGroup>
+    <TargetFrameworks>net10.0</TargetFrameworks>
+    <Description>Common operations for instantiating templates using forward-only input stream operations</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Microsoft.TemplateEngine.Abstractions\Microsoft.TemplateEngine.Abstractions.csproj" />
+    <ProjectReference Include="..\Microsoft.TemplateEngine.Core.Contracts\Microsoft.TemplateEngine.Core.Contracts.csproj" />
+    <ProjectReference Include="..\Microsoft.TemplateEngine.Utils\Microsoft.TemplateEngine.Utils.csproj" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net10.0'">
+    <PackageReference Include="System.Runtime.InteropServices.RuntimeInformation" Version="4.3.0" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="AvalonStudio.Controls.Standard.SolutionExplorer.ProjectConfigurationDialogView"
+             xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:cont="clr-namespace:AvalonStudio.Controls;assembly=AvalonStudio.Shell.Extensibility">
+  <Grid>
+    <DockPanel Margin="5">
+      <StackPanel DockPanel.Dock="Left" ZIndex="100">
+        <TabStrip Name="toolStrip" Items="{Binding ConfigPages}" Focusable="false" >
+          <TabStrip.ItemsPanel>
+            <ItemsPanelTemplate>
+              <StackPanel Orientation="Vertical" />
+            </ItemsPanelTemplate>
+          </TabStrip.ItemsPanel>
+
+          <TabStrip.Styles>
+            <Style Selector="TabStripItem">
+              <Setter Property="Margin" Value="0" />
+            </Style>
+            <Style Selector="TabStripItem:pointerover">
+              <Setter Property="Background" Value="{DynamicResource ApplicationAccentBrushMid}" />
+              <Setter Property="Foreground" Value="{DynamicResource ApplicationAccentForegroundBrush}" />
+            </Style>
+            <Style Selector="TabStripItem:selected">
+              <Setter Property="Background" Value="{DynamicResource ApplicationAccentBrushLow}" />
+              <Setter Property="Foreground" Value="{DynamicResource ApplicationAccentForegroundBrush}" />
+            </Style>
+          </TabStrip.Styles>
+
+          <TabStrip.ItemTemplate>
+            <DataTemplate>
+              <StackPanel Orientation="Horizontal" Spacing="2">
+                <TextBlock Text="{Binding Title}" Margin="5" FontSize="12" />
+              </StackPanel>
+            </DataTemplate>
+          </TabStrip.ItemTemplate>
+        </TabStrip>
+      </StackPanel>
+
+      <cont:ViewModelViewHost DataContext="{Binding #toolStrip.SelectedItem}" ZIndex="50" Margin="5 5 0 0" />      
+    </DockPanel>
+  </Grid>
+</UserControl>

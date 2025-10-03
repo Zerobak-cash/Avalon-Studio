@@ -1,0 +1,6 @@
+﻿<Styles xmlns="https://github.com/avaloniaui">  
+  <StyleInclude Source="avares://AvalonStudio.Shell.Extensibility/Controls/DocumentTabControl.xaml"/>
+  <StyleInclude Source="avares://AvalonStudio.Shell.Extensibility/Controls/DocumentTabItem.xaml"/>
+  <StyleInclude Source="avares://AvalonStudio.Shell.Extensibility/Controls/ViewModelViewHost.xaml"/>
+  <StyleInclude Source="avares://AvalonStudio.Shell.Extensibility/Controls/EditableTextBlock.xaml"/>
+</Styles>

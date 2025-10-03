@@ -1,0 +1,70 @@
+AvalonStudio.Shell/src/AvalonStudio.Shell.Extensibility/Behaviors/BindNativeMenuBehavior.cs:using Avalonia.Xaml.Interactivity;
+AvalonStudio.Shell/src/AvalonStudio.Shell.Extensibility/Behaviors/HideWhenNativeMenuExportedBehavior.cs:using Avalonia.Xaml.Interactivity;
+AvalonStudio.Shell/src/AvalonStudio.Shell.Extensibility/Behaviors/AttachNativeMenuBehavior.cs:using Avalonia.Xaml.Interactivity;
+AvalonStudio.Shell/src/AvalonStudio.Shell.Extensibility/MainMenu/Views/MainMenuView.paml:             xmlns:i="clr-namespace:Avalonia.Xaml.Interactivity;assembly=Avalonia.Xaml.Interactivity"
+AvalonStudio.Shell/src/AvalonStudio.Shell.Extensibility/AvalonStudio.Shell.Extensibility.csproj:    <PackageReference Include="Avalonia.Xaml.Interactivity" Version="11.3.0.6" />
+AvalonStudio.Shell/src/Packages.targets:    <PackageReference Update="Avalonia.Xaml.Behaviors" Version="$(AvaloniaBehaviorsVersion)" />
+AvalonStudio.Shell/src/Packages.targets:    <PackageReference Update="Avalonia.Xaml.Interactions" Version="$(AvaloniaBehaviorsVersion)" />
+AvalonStudio.Shell/src/Packages.targets:    <PackageReference Update="Avalonia.Xaml.Interactivity" Version="$(AvaloniaBehaviorsVersion)" />
+AvalonStudio.Shell/src/Packages.targets:    <PackageReference Update="Avalonia.Xaml.Interactions.Custom" Version="$(AvaloniaBehaviorsVersion)" />
+AvalonStudio.Shell/src/AvalonStudio.Utils/AvalonStudio.Utils.csproj:    <PackageReference Include="Avalonia.Xaml.Behaviors" Version="11.3.0.6" />
+AvalonStudio.Shell/src/AvalonStudio.Utils/AvalonStudio.Utils.csproj:    <PackageReference Include="Avalonia.Xaml.Interactions" Version="11.3.0.6" />
+AvalonStudio.Shell/src/AvalonStudio.Utils/AvalonStudio.Utils.csproj:    <PackageReference Include="Avalonia.Xaml.Interactions.Custom" Version="11.3.0.6" />
+AvalonStudio.Shell/src/AvalonStudio.Utils/Behaviors/BindFocusedBehavior.cs:using Avalonia.Xaml.Interactivity;
+AvalonStudio.Shell/src/AvalonStudio.Utils/Behaviors/CommandBasedBehavior.cs:using Avalonia.Xaml.Interactivity;
+AvalonStudio.Shell/src/AvalonStudio.Utils/Behaviors/OpenCloseWindowBehavior.cs:using Avalonia.Xaml.Interactivity;
+AvalonStudio.Shell/src/AvalonStudio.Utils/Behaviors/PointerWheelValueBehavior.cs:using Avalonia.Xaml.Interactivity;
+AvalonStudio.Shell/src/ShellExampleApp/MainWindow.xaml:                      xmlns:i="clr-namespace:Avalonia.Xaml.Interactivity;assembly=Avalonia.Xaml.Interactivity"
+AvalonStudio.Shell/src/AvalonStudio.Shell/MenuShellView.paml:                      xmlns:i="clr-namespace:Avalonia.Xaml.Interactivity;assembly=Avalonia.Xaml.Interactivity"
+AvalonStudio.Shell/src/AvalonStudio.Shell/MenuShellView.paml:                      xmlns:ia="clr-namespace:Avalonia.Xaml.Interactions.Core;assembly=Avalonia.Xaml.Interactions"
+AvalonStudio.Shell/src/AvalonStudio.Shell/AvalonStudio.Shell.csproj:    <PackageReference Include="Avalonia.Xaml.Behaviors" Version="11.3.0.6" />
+AvalonStudio.Shell/src/AvalonStudio.Shell/AvalonStudio.Shell.csproj:    <PackageReference Include="Avalonia.Xaml.Interactions.Custom" Version="11.3.0.6" />
+AvalonStudio.Shell/src/AvalonStudio.Shell/AvalonStudio.Shell.csproj:    <PackageReference Include="Avalonia.Xaml.Interactivity" Version="11.3.0.6" />
+AvalonStudio.Shell/src/AvalonStudio.Shell/ShellView.paml:                      xmlns:i="clr-namespace:Avalonia.Xaml.Interactivity;assembly=Avalonia.Xaml.Interactivity"
+AvalonStudio.Shell/src/AvalonStudio.Shell/ShellView.paml:                      xmlns:ia="clr-namespace:Avalonia.Xaml.Interactions.Core;assembly=Avalonia.Xaml.Interactions"
+AvalonStudio.Shell/src/AvalonStudio.Shell/Behaviors/HideOnLostFocusBehavior.cs:using Avalonia.Xaml.Interactivity;
+AvalonStudio.Shell/src/AvalonStudio.Shell/Behaviors/FocusOnVisibleBehavior.cs:using Avalonia.Xaml.Interactivity;
+Directory.Build.targets:    <PackageReference Update="Avalonia.Xaml.Behaviors" Version="$(AvaloniaBehaviorsVersion)" />
+Directory.Build.targets:    <PackageReference Update="Avalonia.Xaml.Interactions" Version="$(AvaloniaBehaviorsVersion)" />
+Directory.Build.targets:    <PackageReference Update="Avalonia.Xaml.Interactivity" Version="$(AvaloniaBehaviorsVersion)" />
+Directory.Build.targets:    <PackageReference Update="Avalonia.Xaml.Interactions.Custom" Version="$(AvaloniaBehaviorsVersion)" />
+./AvalonStudio.Shell/src/AvalonStudio.Shell.Extensibility/Behaviors/BindNativeMenuBehavior.cs:using Avalonia.Xaml.Interactivity;
+./AvalonStudio.Shell/src/AvalonStudio.Shell.Extensibility/Behaviors/HideWhenNativeMenuExportedBehavior.cs:using Avalonia.Xaml.Interactivity;
+./AvalonStudio.Shell/src/AvalonStudio.Shell.Extensibility/Behaviors/AttachNativeMenuBehavior.cs:using Avalonia.Xaml.Interactivity;
+./AvalonStudio.Shell/src/AvalonStudio.Shell.Extensibility/MainMenu/Views/MainMenuView.paml:             xmlns:i="clr-namespace:Avalonia.Xaml.Interactivity;assembly=Avalonia.Xaml.Interactivity"
+./AvalonStudio.Shell/src/AvalonStudio.Shell.Extensibility/AvalonStudio.Shell.Extensibility.csproj:    <PackageReference Include="Avalonia.Xaml.Interactivity" Version="11.3.0.6" />
+./AvalonStudio.Shell/src/Packages.targets:    <PackageReference Update="Avalonia.Xaml.Behaviors" Version="$(AvaloniaBehaviorsVersion)" />
+./AvalonStudio.Shell/src/Packages.targets:    <PackageReference Update="Avalonia.Xaml.Interactions" Version="$(AvaloniaBehaviorsVersion)" />
+./AvalonStudio.Shell/src/Packages.targets:    <PackageReference Update="Avalonia.Xaml.Interactivity" Version="$(AvaloniaBehaviorsVersion)" />
+./AvalonStudio.Shell/src/Packages.targets:    <PackageReference Update="Avalonia.Xaml.Interactions.Custom" Version="$(AvaloniaBehaviorsVersion)" />
+./AvalonStudio.Shell/src/AvalonStudio.Utils/AvalonStudio.Utils.csproj:    <PackageReference Include="Avalonia.Xaml.Behaviors" Version="11.3.0.6" />
+./AvalonStudio.Shell/src/AvalonStudio.Utils/AvalonStudio.Utils.csproj:    <PackageReference Include="Avalonia.Xaml.Interactions" Version="11.3.0.6" />
+./AvalonStudio.Shell/src/AvalonStudio.Utils/AvalonStudio.Utils.csproj:    <PackageReference Include="Avalonia.Xaml.Interactions.Custom" Version="11.3.0.6" />
+./AvalonStudio.Shell/src/AvalonStudio.Utils/Behaviors/BindFocusedBehavior.cs:using Avalonia.Xaml.Interactivity;
+./AvalonStudio.Shell/src/AvalonStudio.Utils/Behaviors/CommandBasedBehavior.cs:using Avalonia.Xaml.Interactivity;
+./AvalonStudio.Shell/src/AvalonStudio.Utils/Behaviors/OpenCloseWindowBehavior.cs:using Avalonia.Xaml.Interactivity;
+./AvalonStudio.Shell/src/AvalonStudio.Utils/Behaviors/PointerWheelValueBehavior.cs:using Avalonia.Xaml.Interactivity;
+./AvalonStudio.Shell/src/ShellExampleApp/MainWindow.xaml:                      xmlns:i="clr-namespace:Avalonia.Xaml.Interactivity;assembly=Avalonia.Xaml.Interactivity"
+./AvalonStudio.Shell/src/AvalonStudio.Shell/MenuShellView.paml:                      xmlns:i="clr-namespace:Avalonia.Xaml.Interactivity;assembly=Avalonia.Xaml.Interactivity"
+./AvalonStudio.Shell/src/AvalonStudio.Shell/MenuShellView.paml:                      xmlns:ia="clr-namespace:Avalonia.Xaml.Interactions.Core;assembly=Avalonia.Xaml.Interactions"
+./AvalonStudio.Shell/src/AvalonStudio.Shell/AvalonStudio.Shell.csproj:    <PackageReference Include="Avalonia.Xaml.Behaviors" Version="11.3.0.6" />
+./AvalonStudio.Shell/src/AvalonStudio.Shell/AvalonStudio.Shell.csproj:    <PackageReference Include="Avalonia.Xaml.Interactions.Custom" Version="11.3.0.6" />
+./AvalonStudio.Shell/src/AvalonStudio.Shell/AvalonStudio.Shell.csproj:    <PackageReference Include="Avalonia.Xaml.Interactivity" Version="11.3.0.6" />
+./AvalonStudio.Shell/src/AvalonStudio.Shell/ShellView.paml:                      xmlns:i="clr-namespace:Avalonia.Xaml.Interactivity;assembly=Avalonia.Xaml.Interactivity"
+./AvalonStudio.Shell/src/AvalonStudio.Shell/ShellView.paml:                      xmlns:ia="clr-namespace:Avalonia.Xaml.Interactions.Core;assembly=Avalonia.Xaml.Interactions"
+./AvalonStudio.Shell/src/AvalonStudio.Shell/Behaviors/HideOnLostFocusBehavior.cs:using Avalonia.Xaml.Interactivity;
+./AvalonStudio.Shell/src/AvalonStudio.Shell/Behaviors/FocusOnVisibleBehavior.cs:using Avalonia.Xaml.Interactivity;
+./Directory.Build.targets:    <PackageReference Update="Avalonia.Xaml.Behaviors" Version="$(AvaloniaBehaviorsVersion)" />
+./Directory.Build.targets:    <PackageReference Update="Avalonia.Xaml.Interactions" Version="$(AvaloniaBehaviorsVersion)" />
+./Directory.Build.targets:    <PackageReference Update="Avalonia.Xaml.Interactivity" Version="$(AvaloniaBehaviorsVersion)" />
+./Directory.Build.targets:    <PackageReference Update="Avalonia.Xaml.Interactions.Custom" Version="$(AvaloniaBehaviorsVersion)" />
+./AvalonStudio/AvalonStudio.Controls.Standard/FindInFiles/FindInFilesView.xaml:             xmlns:i="clr-namespace:Avalonia.Xaml.Interactivity;assembly=Avalonia.Xaml.Interactivity">
+./AvalonStudio/AvalonStudio.Studio/SearchResult.xaml:             xmlns:i="clr-namespace:Avalonia.Xaml.Interactivity;assembly=Avalonia.Xaml.Interactivity"
+./AvalonStudio/AvalonStudio.Studio/SearchResult.xaml:             xmlns:iac="clr-namespace:Avalonia.Xaml.Interactions.Custom;assembly=Avalonia.Xaml.Interactions.Custom"
+./AvalonStudio/AvalonStudio.Studio/QuickCommander.xaml:             xmlns:i="clr-namespace:Avalonia.Xaml.Interactivity;assembly=Avalonia.Xaml.Interactivity"
+./AvalonStudio/AvalonStudio.Studio/QuickCommander.xaml:             xmlns:iac="clr-namespace:Avalonia.Xaml.Interactions.Custom;assembly=Avalonia.Xaml.Interactions.Custom"
+./AvalonStudio/AvalonStudio.Controls.Editor/EditorView.xaml:             xmlns:i="clr-namespace:Avalonia.Xaml.Interactivity;assembly=Avalonia.Xaml.Interactivity"
+./AvalonStudio/AvalonStudio.TextEditor/Behaviours/PointerHoverBehaviour.cs://using Avalonia.Xaml.Interactivity;
+./AvalonStudio/AvalonStudio.Extensibility.Editor/CodeEditorView.xaml:             xmlns:i="clr-namespace:Avalonia.Xaml.Interactivity;assembly=Avalonia.Xaml.Interactivity"
+./AvalonStudio/AvalonStudio/Behaviors/TooltipBehavior.cs:    using Avalonia.Xaml.Interactivity;
+./AvalonStudio/AvalonStudio/MainWindow.xaml:                      xmlns:i="clr-namespace:Avalonia.Xaml.Interactivity;assembly=Avalonia.Xaml.Interactivity"

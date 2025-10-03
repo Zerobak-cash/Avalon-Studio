@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="AvalonStudio.Projects.CPlusPlus.DebuggerSettingsFormView"
+             xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:cont="clr-namespace:AvalonStudio.Controls;assembly=AvalonStudio.Shell.Extensibility">
+    <Grid IsEnabled="{Binding IsEnabled}">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="15*"/>
+        <RowDefinition Height="25*" />
+        <RowDefinition Height="60*" />
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="282*"/>
+        <ColumnDefinition Width="115*"/>
+        <ColumnDefinition Width="397*"/>
+      </Grid.ColumnDefinitions>
+
+      <StackPanel Grid.Row="0" Spacing="4">
+        <TextBlock  Text="Debug Adaptor:"/>
+        <DropDown  Items="{Binding Debuggers}" SelectedItem="{Binding SelectedDebugger, Mode=TwoWay}" />
+      </StackPanel>
+
+
+      <Panel Grid.Row="1" Grid.ColumnSpan="3" DataContext="{Binding SelectedDebugger}"  >
+        <Grid>
+          <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition/>
+            <RowDefinition Height="30"/>
+          </Grid.RowDefinitions>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="80"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+          </Grid.ColumnDefinitions>
+
+          <TextBlock Text="Name: " HorizontalAlignment="Right"/>
+          <TextBlock Grid.Column="1" Text="{Binding Name}" Margin="10 5 0 0"/>
+          <TextBlock Grid.Row="1" Text="Version:" HorizontalAlignment="Right"/>
+          <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Version}" Margin="10 5 0 0"/>
+          <TextBlock Grid.Row="2" Text="Description:" HorizontalAlignment="Right" />
+          <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding Description}" Margin="10 5 0 0"/>
+
+          <!--Button Grid.Row="0" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Center" Content="{Binding ButtonText}" Command="{Binding InstallCommand}"/>-->
+
+          <TextBlock Grid.Row="3" Grid.ColumnSpan="3" Text="{Binding StatusMessage}"/>
+        </Grid>
+      </Panel>
+
+      <ScrollViewer Grid.Row="2" Grid.ColumnSpan="3">
+        <cont:ViewModelViewHost DataContext="{Binding DebugSettingsControl}" />  
+      </ScrollViewer>
+    </Grid>
+  </UserControl>

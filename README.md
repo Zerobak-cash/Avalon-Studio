@@ -4,7 +4,7 @@
 
 # AvalonStudio
 
-BEING UPDATED TO 2025, NOT WORKING YET.
+BEING UPDATED TO 2025, NOT WORKING YET.Code updated working on build errors.
 
 An extensible, cross platform IDE written in C# for Embedded C/C++, .NET Core, Avalonia and Typescript
 

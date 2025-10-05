@@ -1,0 +1,54 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Product>AvalonBuild</Product>
+    <OutputType>Exe</OutputType>
+    <TargetFrameworks>net10.0</TargetFrameworks>
+    <AssemblyName>avalon</AssemblyName>
+    <TieredCompilation>True</TieredCompilation>
+    <PreserveCompilationContext>true</PreserveCompilationContext>
+    <RuntimeIdentifiers>win7-x64;linux-x64;osx-x64</RuntimeIdentifiers>
+    <NoWarn>NU1701</NoWarn>
+	<PackAsTool>true</PackAsTool>
+	<ToolCommandName>avalon</ToolCommandName>
+	<AssemblyVersion>$(Version)</AssemblyVersion>
+    <PackageId>AvalonBuild</PackageId>
+	<GenerateAssemblyInfo>True</GenerateAssemblyInfo>
+	<PackageOutputPath>./nupkg</PackageOutputPath>
+	<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+	<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommandLineParser" Version="2.9.1" />
+    <PackageReference Include="GitInfo" Version="3.5.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\AvalonStudio.Shell\src\AvalonStudio.Shell.Extensibility\AvalonStudio.Shell.Extensibility.csproj" />
+    <ProjectReference Include="..\..\AvalonStudio.Shell\src\AvalonStudio.Shell\AvalonStudio.Shell.csproj" />
+    <ProjectReference Include="..\AvalonStudio.Controls.Editor\AvalonStudio.Controls.Editor.csproj" />
+    <ProjectReference Include="..\AvalonStudio.Extensibility\AvalonStudio.Extensibility.csproj" />
+    <ProjectReference Include="..\AvalonStudio.Projects.CPlusPlus\AvalonStudio.Projects.CPlusPlus.csproj" />
+    <ProjectReference Include="..\AvalonStudio.Studio\AvalonStudio.Studio.csproj" />
+    <ProjectReference Include="..\AvalonStudio.TestFrameworks.Catch\AvalonStudio.TestFrameworks.Catch.csproj" />
+    <ProjectReference Include="..\AvalonStudio.Toolchains.Clang\AvalonStudio.Toolchains.Clang.csproj" />
+    <ProjectReference Include="..\AvalonStudio.Toolchains.CustomGCC\AvalonStudio.Toolchains.CustomGCC.csproj" />
+    <ProjectReference Include="..\AvalonStudio.Toolchains.GCC\AvalonStudio.Toolchains.GCC.csproj" />
+    <ProjectReference Include="..\AvalonStudio.Toolchains.LocalGCC\AvalonStudio.Toolchains.LocalGCC.csproj" />
+    <ProjectReference Include="..\AvalonStudio.Toolchains.PublishedGCC\AvalonStudio.Toolchains.PublishedGCC.csproj" />
+    <ProjectReference Include="..\AvalonStudio.Toolchains.Standard\AvalonStudio.Toolchains.Standard.csproj" />
+    <ProjectReference Include="..\AvalonStudio.Toolchains.STM32\AvalonStudio.Toolchains.STM32.csproj" />
+  </ItemGroup>
+
+  <Target Name="GetTargetPath" Returns="@(_FakeOutputPath)">
+    <ItemGroup>
+      <_FakeOutputPath Include="$(MSBuildProjectDirectory)\$(PackageOutputPath)\$(AssemblyName).UNK" />
+    </ItemGroup>
+  </Target>
+
+  <Import Project="..\build\SharedVersion.props" />
+</Project>

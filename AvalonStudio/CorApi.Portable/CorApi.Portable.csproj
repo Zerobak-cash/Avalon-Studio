@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <DebugType>full</DebugType>
+    <DebugSymbols>True</DebugSymbols>
+  </PropertyGroup>
+  <!--<ItemGroup>
+    <SharpGenMapping Include="Mapping.xml" />
+  </ItemGroup>-->
+
+  <ItemGroup>        
+    <PackageReference Include="SharpGen.Runtime" Version="2.0.0-beta.1" />        
+    <PackageReference Include="SharpGen.Runtime.COM" Version="2.0.0-beta.1" />        
+    <PackageReference Include="SharpGenTools.Sdk" Version="2.0.0-beta.1" PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="SharpGen.Runtime">
+      <HintPath>..\..\SharpGenTools\SharpGen.Runtime\bin\Debug\netstandard2.0\SharpGen.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

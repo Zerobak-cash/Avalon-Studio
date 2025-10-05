@@ -1,0 +1,17 @@
+<UserControl x:Class="AvalonStudio.Debugging.GDB.OpenOCD.OpenOCDSettingsFormView"
+             xmlns="https://github.com/avaloniaui"
+              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StackPanel Spacing="10">
+        <StackPanel Orientation="Horizontal" Spacing="5">
+            <TextBlock Text="Interface Config File" />
+            <TextBox Text="{Binding InterfaceConfigFile}" IsReadOnly="true" Width="400" />
+            <Button Content="Browse" Command="{Binding BrowseInterfaceConfigFileCommand}" />
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Spacing="5">
+            <TextBlock Text="Target Config File" />
+            <TextBox Text="{Binding TargetConfigFile}" IsReadOnly="true" Width="400" />
+            <Button Content="Browse" Command="{Binding BrowseTargetConfigFileCommand}" />
+        </StackPanel>
+    </StackPanel>
+</UserControl>

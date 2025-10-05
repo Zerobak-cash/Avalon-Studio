@@ -1,0 +1,64 @@
+<Project>
+
+  <PropertyGroup>
+    <AvaloniaBehaviorsVersion>11.3.0.6</AvaloniaBehaviorsVersion>
+    <AvaloniaVersion>11.3.6</AvaloniaVersion>
+    <DockVersion>11.3.6.1</DockVersion>
+    <GitInfoVersion>3.5.0</GitInfoVersion>
+    <MicrosoftExtensionsDependencyModelVersion>9.0.9</MicrosoftExtensionsDependencyModelVersion>
+    <NewtonsoftJsonVersion>13.0.4</NewtonsoftJsonVersion>
+    <ReactiveUIVersion>21.0.1</ReactiveUIVersion>
+    <RoslynVersion>7.0.0</RoslynVersion>
+    <SystemCompositionVersion>9.0.9</SystemCompositionVersion>
+    <SystemDiagnosticsProcessVersion>4.3.0</SystemDiagnosticsProcessVersion>
+    <SystemDrawingCommonVersion>9.0.9</SystemDrawingCommonVersion>
+    <SystemNetPrimitivesVersion>4.3.1</SystemNetPrimitivesVersion>
+    <SystemRuntimeInteropServicesRuntimeInformationVersion>4.3.0</SystemRuntimeInteropServicesRuntimeInformationVersion>
+    <SystemSecurityPrincipalVersion>5.0.0</SystemSecurityPrincipalVersion>
+    <SystemXmlXmlDocumentVersion>4.3.0</SystemXmlXmlDocumentVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Update="Avalonia" Version="$(AvaloniaVersion)" />
+    <PackageReference Update="Avalonia.X11" Version="$(AvaloniaVersion)" />
+    <PackageReference Update="Avalonia.Desktop" Version="$(AvaloniaVersion)" />
+    <PackageReference Update="Avalonia.ReactiveUI" Version="$(AvaloniaVersion)" />
+    <PackageReference Update="Avalonia.Controls.DataGrid" Version="$(AvaloniaVersion)" />
+    <PackageReference Update="Avalonia.Xaml.Behaviors" Version="$(AvaloniaBehaviorsVersion)" />
+    <PackageReference Update="Avalonia.Xaml.Interactions" Version="$(AvaloniaBehaviorsVersion)" />
+    <PackageReference Update="Avalonia.Xaml.Interactivity" Version="$(AvaloniaBehaviorsVersion)" />
+    <PackageReference Update="Avalonia.Xaml.Interactions.Custom" Version="$(AvaloniaBehaviorsVersion)" />
+    <PackageReference Update="GitInfo" Version="$(GitInfoVersion)" />
+    <PackageReference Update="CommunityToolkit.WinUI.Behaviors" Version="8.2.250402" />
+    <PackageReference Update="Microsoft.CodeAnalysis" Version="4.14.0" />
+    <PackageReference Update="Microsoft.CodeAnalysis.CSharp" Version="4.14.0" />
+    <PackageReference Update="Microsoft.CodeAnalysis.CSharp.Features" Version="4.14.0" />
+    <PackageReference Update="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="4.14.0" />
+    <PackageReference Update="Microsoft.CodeAnalysis.Features" Version="4.14.0" />
+    <PackageReference Update="Microsoft.CodeAnalysis.Workspaces.Common" Version="4.14.0" />
+    <PackageReference Update="Microsoft.Extensions.DependencyModel" Version="$(MicrosoftExtensionsDependencyModelVersion)" />
+    <PackageReference Update="Newtonsoft.Json" Version="$(NewtonsoftJsonVersion)" />
+    <PackageReference Update="ReactiveUI" Version="$(ReactiveUIVersion)" />
+    <PackageReference Update="System.Composition" Version="$(SystemCompositionVersion)" />
+    <PackageReference Update="System.Composition.AttributedModel" Version="$(SystemCompositionVersion)" />
+    <PackageReference Update="System.Diagnostics.Process" Version="$(SystemDiagnosticsProcessVersion)" />
+    <PackageReference Update="System.Drawing.Common" Version="$(SystemDrawingCommonVersion)" />
+    <PackageReference Update="System.Net.Primitives" Version="$(SystemNetPrimitivesVersion)" />
+    <PackageReference Update="System.Net.Http" Version="4.3.4" />
+    <PackageReference Update="System.Runtime.InteropServices.RuntimeInformation" Version="$(SystemRuntimeInteropServicesRuntimeInformationVersion)" />
+    <PackageReference Update="System.Security.Principal" Version="4.3.0" />
+    <PackageReference Update="System.Security.Principal" Version="4.3.0" />
+    <PackageReference Update="System.Private.Uri" Version="4.3.2" />
+    <PackageReference Update="System.Text.RegularExpressions" Version="4.3.1" />
+    <PackageReference Update="System.Xml.XmlDocument" Version="$(SystemXmlXmlDocumentVersion)" />
+    <PackageReference Update="Dock.Avalonia" Version="$(DockVersion)" />
+    <PackageReference Update="Dock.Model.ReactiveUI" Version="$(DockVersion)" />
+    <PackageReference Update="Dock.Avalonia.Themes.Default" Version="$(DockVersion)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="**\*.xaml.cs;**\*.paml.cs;**\*.axaml.cs;" DependentUpon="%(Filename)" />    
+    <Folder Include="Properties\" />
+  </ItemGroup>
+
+</Project>

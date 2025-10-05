@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="AvalonStudio.Projects.CPlusPlus.ReferenceSettingsFormView"
+             xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:proj="clr-namespace:AvalonStudio.Projects.CPlusPlus;assembly=AvalonStudio.Projects.CPlusPlus">
+  <Grid>
+    <ListBox Items="{Binding Projects}" Grid.Column="1" Margin="10 0 0 0" >
+      <ListBox.DataTemplates>
+        <DataTemplate DataType="proj:ReferenceViewModel">
+          <StackPanel Orientation="Horizontal">
+            <CheckBox IsChecked="{Binding IsReferenced}"  />
+            <TextBlock Text="{Binding Name}" />            
+          </StackPanel>
+        </DataTemplate>
+      </ListBox.DataTemplates>
+    </ListBox>
+  </Grid>
+</UserControl>

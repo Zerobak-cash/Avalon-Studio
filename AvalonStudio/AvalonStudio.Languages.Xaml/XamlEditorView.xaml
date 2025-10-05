@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="AvalonStudio.Languages.Xaml.XamlEditorView"
+             xmlns="https://github.com/avaloniaui"
+              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:previewer="clr-namespace:AvalonStudio.Languages.Xaml"
+             xmlns:as="clr-namespace:AvalonStudio.Extensibility.Controls;assembly=AvalonStudio.Extensibility"
+             xmlns:local="clr-namespace:AvalonStudio.Extensibility.Editor;assembly=AvalonStudio.Extensibility.Editor">
+  <Grid RowDefinitions="*,5,*">
+    <Grid DockPanel.Dock="Top" Background="{DynamicResource ThemeEditorBackground}">
+      <Border BorderBrush="{DynamicResource ThemeBorderDarkBrush}" BorderThickness="1">
+        <previewer:AvaloniaPreviewer Xaml="{Binding SourceText}" SourceFile="{Binding SourceFile}" />
+      </Border>
+    </Grid>
+
+    <GridSplitter Grid.Row="1" />
+
+    <local:CodeEditorView Grid.Row="2" />
+    
+  </Grid>
+</UserControl>

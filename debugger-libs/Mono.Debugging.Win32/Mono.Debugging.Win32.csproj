@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <NoWarn>NU1701</NoWarn>
+	<NoWarn>NU1605</NoWarn>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\AvalonStudio\AvalonStudio.Extensibility\AvalonStudio.Extensibility.csproj" />
+    <ProjectReference Include="..\..\AvalonStudio\CorApi.Portable\CorApi.Portable.csproj" />
+    <ProjectReference Include="..\CorApi2\CorApi2.NetCore2.csproj" />
+    <ProjectReference Include="..\CorApi\CorApi.NetCore2.csproj" />
+    <ProjectReference Include="..\Mono.Debugging\Mono.Debugging.csproj" />
+
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+
+</Project>

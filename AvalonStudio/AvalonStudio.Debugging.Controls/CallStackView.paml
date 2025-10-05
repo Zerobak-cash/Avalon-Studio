@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="AvalonStudio.Debugging.Controls.CallStackView"
+             xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="clr-namespace:AvalonStudio.Debugging;assembly=AvalonStudio.Debugging" IsVisible="{Binding IsVisible}">
+  <ListBox BorderThickness="0" Items="{Binding Frames}" SelectedItem="{Binding SelectedFrame}" Background="{DynamicResource ThemeControlBackgroundBrush}">
+    <ListBox.DataTemplates>
+      <DataTemplate DataType="vm:FrameViewModel">
+        <StackPanel Orientation="Horizontal" Spacing="5" Background="{Binding Background}">
+          <TextBlock Text="{Binding Function}" Width="200" />
+          <TextBlock Text="{Binding Line}" />
+          <TextBlock Text="{Binding Address}" />
+          <TextBlock Text="{Binding File}" />
+        </StackPanel>
+      </DataTemplate>
+    </ListBox.DataTemplates>
+  </ListBox>
+</UserControl>

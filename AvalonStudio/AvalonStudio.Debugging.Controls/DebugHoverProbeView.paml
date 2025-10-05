@@ -1,0 +1,8 @@
+﻿<UserControl x:Class="AvalonStudio.Debugging.Controls.DebugHoverProbeView"
+             xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:cont="clr-namespace:AvalonStudio.Debugging.Controls" FontFamily="{DynamicResource UiFont}" FontSize="12">
+    <Grid Background="{DynamicResource ThemeControlBackgroundBrush}" TextBlock.Foreground="{DynamicResource ThemeForegroundBrush}">
+      <cont:VariableControlView Margin="5" />
+    </Grid>    
+</UserControl>

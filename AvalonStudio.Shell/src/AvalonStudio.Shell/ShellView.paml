@@ -1,0 +1,74 @@
+﻿<UserControl x:Class="AvalonStudio.Shell.ShellView"
+             xmlns="https://github.com/avaloniaui"
+                      xmlns:cont="clr-namespace:AvalonStudio.Shell.Controls;assembly=AvalonStudio.Shell"
+                      xmlns:menu="clr-namespace:AvalonStudio.Shell.Extensibility.MainMenu.Views;assembly=AvalonStudio.Shell.Extensibility"
+                      xmlns:i="clr-namespace:Avalonia.Xaml.Interactivity;assembly=Avalonia.Xaml.Interactivity"
+                      xmlns:ia="clr-namespace:Avalonia.Xaml.Interactions.Core;assembly=Avalonia.Xaml.Interactions"
+                      xmlns:id="clr-namespace:Dock.Avalonia;assembly=Dock.Avalonia"
+                      xmlns:idc="clr-namespace:Dock.Avalonia.Controls;assembly=Dock.Avalonia"
+                      xmlns:beh="clr-namespace:AvalonStudio.Utils.Behaviors;assembly=AvalonStudio.Utils"
+                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                      FontFamily="{DynamicResource UiFont}" FontSize="14"
+                      Foreground="{DynamicResource ThemeForegroundBrush}"
+                      Focusable="True">
+  <i:Interaction.Behaviors>
+    <beh:OpenCloseWindowBehavior DataContext="{Binding ModalDialog}" WindowType="{x:Type cont:ModalDialog}" IsOpen="{Binding ModalDialog.IsVisible}" />
+  </i:Interaction.Behaviors>
+
+  <UserControl.Styles>
+    <Style Selector="ListBoxItem:selected">
+      <Setter Property="Foreground" Value="{DynamicResource ApplicationAccentForegroundBrush}" />
+    </Style>
+
+    <Style Selector="ListBoxItem:selected /template/ ContentPresenter">
+      <Setter Property="Background" Value="{DynamicResource ApplicationAccentBrushLow}" />
+    </Style>
+
+    <Style Selector="DropDownItem:selected /template/ ContentPresenter">
+      <Setter Property="Background" Value="{DynamicResource ApplicationAccentBrushLow}" />
+    </Style>
+    <Style Selector="DropDownItem:pointerover /template/ ContentPresenter">
+      <Setter Property="Background" Value="{DynamicResource ApplicationAccentBrushLow}" />
+    </Style>
+
+    <Style Selector="DropDownItem:selected">
+      <Setter Property="Foreground" Value="{DynamicResource ApplicationAccentForegroundBrush}" />
+    </Style>
+    <Style Selector="DropDownItem:pointerover">
+      <Setter Property="Foreground" Value="{DynamicResource ApplicationAccentForegroundBrush}" />
+    </Style>
+
+    <!-- GridSplitter.vertical -->
+    <Style Selector="GridSplitter:vertical">
+      <Setter Property="Width" Value="6" />
+      <Setter Property="Background" Value="#00FFFFFF" />
+      <Setter Property="Template">
+        <ControlTemplate>
+          <Border Background="{TemplateBinding Background}" />
+        </ControlTemplate>
+      </Setter>
+    </Style>
+    <!-- GridSplitter.horizontal -->
+    <Style Selector="GridSplitter:horizontal">
+      <Setter Property="Height" Value="6" />
+      <Setter Property="Background" Value="#00FFFFFF" />
+      <Setter Property="Template">
+        <ControlTemplate>
+          <Border Background="{TemplateBinding Background}" BorderThickness="1" />
+        </ControlTemplate>
+      </Setter>
+    </Style>
+  </UserControl.Styles>
+  <UserControl.KeyBindings>
+    <KeyBinding Command="{Binding EnableDebugModeCommand}" Gesture="CTRL+SHIFT+D" />
+  </UserControl.KeyBindings>
+  <Grid RowDefinitions="Auto,*" id:DockProperties.IsDropArea="True">
+    <Grid Margin="0">
+        <cont:ToolBar DataContext="{Binding StandardToolbar}" Grid.Row="1" Margin="7 0 4 4" IsVisible="{Binding !!StandardToolbar}" />
+    </Grid>
+
+    <Grid Grid.Row="1" Margin="0">
+      <idc:DockControl Name="Dock" Layout="{Binding Root}" Margin="4 2 4 4" />
+    </Grid>
+  </Grid>
+</UserControl>

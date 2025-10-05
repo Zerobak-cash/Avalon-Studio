@@ -1,0 +1,12 @@
+<Project>
+
+  <PropertyGroup>
+    <AvaloniaBehaviorsVersion>11.3.6</AvaloniaBehaviorsVersion>
+    <AvaloniaVersion>11.3.6</AvaloniaVersion>
+    <DockVersion>11.3.6.1</DockVersion>
+    <NewtonsoftJsonVersion>13.0.4</NewtonsoftJsonVersion>
+    <ReactiveUIVersion>21.0.1</ReactiveUIVersion>
+    <SystemCompositionVersion>9.0.9</SystemCompositionVersion>
+  </PropertyGroup>
+
+</Project>

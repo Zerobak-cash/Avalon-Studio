@@ -1,0 +1,92 @@
+﻿<UserControl x:Class="AvalonStudio.Projects.CPlusPlus.ToolchainSettingsFormView"
+             xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+             xmlns:cont="clr-namespace:AvalonStudio.Controls;assembly=AvalonStudio.Shell.Extensibility">
+  <Grid IsEnabled="{Binding IsEnabled}">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="30"/>
+      <RowDefinition Height="110" />
+      <RowDefinition />
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="282*"/>
+      <ColumnDefinition Width="115*"/>
+      <ColumnDefinition Width="397*"/>
+    </Grid.ColumnDefinitions>
+
+    <TextBlock Grid.Row="0" Text="Toolchain" Grid.ColumnSpan="2"/>
+    <DropDown Grid.Row="0" Grid.Column="2" Items="{Binding Toolchains}" SelectedItem="{Binding SelectedToolchain, Mode=TwoWay}" />
+
+    <Panel Grid.Row="1" Grid.ColumnSpan="3" DataContext="{Binding SelectedToolchain}"  >
+      <Grid>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="30"/>
+          <RowDefinition Height="30"/>
+          <RowDefinition/>
+          <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="80"/>
+          <ColumnDefinition/>
+          <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Text="Name: " HorizontalAlignment="Right"/>
+        <TextBlock Grid.Column="1" Text="{Binding Name}" Margin="10 5 0 0"/>
+        <TextBlock Grid.Row="1" Text="Version:" HorizontalAlignment="Right"/>
+        <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Version}" Margin="10 5 0 0"/>
+        <TextBlock Grid.Row="2" Text="Description:" HorizontalAlignment="Right" />
+        <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding Description}" Margin="10 5 0 0"/>
+
+        <Button Grid.Row="0" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Center" Content="{Binding ButtonText}" Command="{Binding InstallCommand}"/>
+        <TextBlock Grid.Row="3" Grid.ColumnSpan="3" Text="{Binding StatusMessage}"/>
+      </Grid>
+    </Panel>
+
+    <Grid Grid.Row="2" Grid.ColumnSpan="3">
+      <Grid Margin="4">
+        <Border BorderThickness="1" BorderBrush="{DynamicResource ThemeBorderDarkBrush}">
+          <DockPanel>
+            <StackPanel DockPanel.Dock="Top" ZIndex="100">
+              <TabStrip Name="toolStrip" Items="{Binding ConfigPages}" SelectedItem="{Binding SelectedConfigPage, Mode=TwoWay}" Focusable="false">
+                <TabStrip.ItemsPanel>
+                  <ItemsPanelTemplate>
+                    <DockPanel LastChildFill="false" />
+                  </ItemsPanelTemplate>
+                </TabStrip.ItemsPanel>
+
+                <TabStrip.Styles>
+                  <Style Selector="TabStripItem">
+                    <Setter Property="Margin" Value="0" />
+                    <Setter Property="Foreground" Value="{DynamicResource ThemeForegroundBrush}" />
+                  </Style>
+                  <Style Selector="TabStripItem:pointerover">
+                    <Setter Property="Foreground" Value="{DynamicResource ApplicationAccentBrushMid}" />
+                  </Style>
+                  <Style Selector="TabStripItem:selected">
+                    <Setter Property="Foreground" Value="{DynamicResource ApplicationAccentBrushLow}" />
+                  </Style>
+                </TabStrip.Styles>
+
+                <TabStrip.DataTemplates>
+                  <DataTemplate>
+                    <StackPanel Orientation="Horizontal" Spacing="2">
+                      <TextBlock Text="{Binding Title}" Margin="2"/>
+                    </StackPanel>
+                  </DataTemplate>
+                </TabStrip.DataTemplates>
+              </TabStrip>
+            </StackPanel>
+
+            <ScrollViewer>
+              <Grid Margin="8">
+                <cont:ViewModelViewHost DataContext="{Binding #toolStrip.SelectedItem}" ZIndex="50" />
+              </Grid>
+            </ScrollViewer>
+          </DockPanel>
+        </Border>
+      </Grid>
+
+    </Grid>
+  </Grid>
+</UserControl>

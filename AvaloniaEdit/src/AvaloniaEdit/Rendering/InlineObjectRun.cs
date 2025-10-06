@@ -32,14 +32,14 @@ namespace AvaloniaEdit.Rendering
         /// <summary>
         /// Gets the inline element that is displayed.
         /// </summary>
-        public IControl Element { get; }
+        public Control Element { get; }
 
         /// <summary>
         /// Creates a new InlineObjectElement.
         /// </summary>
         /// <param name="documentLength">The length of the element in the document. Must be non-negative.</param>
         /// <param name="element">The element to display.</param>
-        public InlineObjectElement(int documentLength, IControl element)
+        public InlineObjectElement(int documentLength, Control element)
             : base(1, documentLength)
         {
             Element = element ?? throw new ArgumentNullException(nameof(element));
@@ -67,8 +67,8 @@ namespace AvaloniaEdit.Rendering
         /// </summary>
         /// <param name="length">The length of the TextRun.</param>
         /// <param name="properties">The <see cref="TextRunProperties"/> to use.</param>
-        /// <param name="element">The <see cref="IControl"/> to display.</param>
-        public InlineObjectRun(int length, TextRunProperties properties, IControl element)
+        /// <param name="element">The <see cref="Control"/> to display.</param>
+        public InlineObjectRun(int length, TextRunProperties properties, Control element)
         {
             if (length <= 0)
                 throw new ArgumentOutOfRangeException(nameof(length), length, "Value must be positive");
@@ -81,7 +81,7 @@ namespace AvaloniaEdit.Rendering
         /// <summary>
         /// Gets the element displayed by the InlineObjectRun.
         /// </summary>
-        public IControl Element { get; }
+        public Control Element { get; }
 
         /// <summary>
         /// Gets the VisualLine that contains this object. This property is only available after the object

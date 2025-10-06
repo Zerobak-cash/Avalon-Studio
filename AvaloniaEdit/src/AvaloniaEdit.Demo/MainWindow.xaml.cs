@@ -20,7 +20,7 @@ using AvaloniaEdit.Rendering;
 
 namespace AvaloniaEdit.Demo
 {
-    using Pair = KeyValuePair<int, IControl>;
+    using Pair = KeyValuePair<int, Control>;
 
     public class MainWindow : Window
     {

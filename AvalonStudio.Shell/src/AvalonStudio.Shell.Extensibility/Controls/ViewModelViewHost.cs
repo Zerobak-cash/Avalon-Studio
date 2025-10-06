@@ -84,7 +84,7 @@ namespace AvalonStudio.Controls
             }
         }
 
-        private static void somethingChanged(IAvaloniaObject dependencyObject, bool changed)
+        private static void somethingChanged(AvaloniaObject dependencyObject, bool changed)
         {
             if (changed)
             {

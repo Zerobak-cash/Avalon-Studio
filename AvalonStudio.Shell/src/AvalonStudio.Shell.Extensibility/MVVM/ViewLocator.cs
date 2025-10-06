@@ -6,7 +6,7 @@ namespace AvalonStudio.MVVM
 {
     public class ViewLocator
     {
-        public static IControl Build(object data)
+        public static Control Build(object data)
         {            
             var name = data.GetType().FullName.Replace("ViewModel", "View");
 

@@ -1981,7 +1981,7 @@ namespace AvaloniaEdit.Rendering
             return pen;
         }
 
-        bool ILogicalScrollable.BringIntoView(IControl target, Rect rectangle)
+        bool ILogicalScrollable.BringIntoView(Control target, Rect rectangle)
         {
             if (rectangle.IsEmpty || target == null || target == this || !this.IsVisualAncestorOf(target))
             {
@@ -1998,7 +1998,7 @@ namespace AvaloniaEdit.Rendering
             return true;
         }
 
-        IControl ILogicalScrollable.GetControlInDirection(NavigationDirection direction, IControl from)
+        Control ILogicalScrollable.GetControlInDirection(NavigationDirection direction, Control from)
         {
             return null;
         }

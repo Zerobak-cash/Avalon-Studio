@@ -36,7 +36,7 @@ namespace AvaloniaEdit.Editing
         /// <summary>
         /// Creates a vertical dotted line to separate the line numbers from the text view.
         /// </summary>
-        public static IControl Create()
+        public static Control Create()
         {
             var line = new Line
             {
@@ -56,7 +56,7 @@ namespace AvaloniaEdit.Editing
         /// <summary>
         /// Gets whether the specified UIElement is the result of a DottedLineMargin.Create call.
         /// </summary>
-        public static bool IsDottedLineMargin(IControl element)
+        public static bool IsDottedLineMargin(Control element)
         {
             var l = element as Line;
             return l != null && l.Tag == Tag;

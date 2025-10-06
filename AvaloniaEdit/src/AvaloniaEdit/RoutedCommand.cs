@@ -85,7 +85,7 @@ namespace AvaloniaEdit
         }
     }
 
-    public interface IRoutedCommandBindable : IInteractive
+    public interface IRoutedCommandBindable : InputElement
     {
         IList<RoutedCommandBinding> CommandBindings { get; }
     }

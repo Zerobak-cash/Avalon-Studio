@@ -1,0 +1,7 @@
+OnPropertyChanged final migration notes:
+- Replace signatures like:
+    protected override void OnPropertyChanged<T>(AvaloniaPropertyChangedEventArgs<T> change)
+  with:
+    protected override void OnPropertyChanged(AvaloniaPropertyChangedEventArgs change)
+- Use change.GetNewValue<T>() or change.GetOldValue<T>() to access typed values.
+- After replacing, re-run build and fix any casts or type-specific code accordingly.

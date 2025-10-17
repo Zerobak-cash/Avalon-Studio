@@ -1,0 +1,9 @@
+<Project>
+  <PropertyGroup>
+    <!-- Global warning suppression -->
+    <NoWarn>NU1903;NETSDK1057;NETSDK1188</NoWarn>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <!-- Enforce consistent line endings -->
+    <NormalizeLineEndings>true</NormalizeLineEndings>
+  </PropertyGroup>
+</Project>

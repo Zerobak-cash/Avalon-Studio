@@ -1,0 +1,6 @@
+CompletionList/CompletionListBox notes:
+- If you see errors about multiple base classes (Popup and StyledElement), replace inheritance to derive from Popup only,
+  and move any StyledElement-specific code to a contained control or to the Popup's Child.
+- Example pattern:
+    public class CompletionWindowBase : Popup { /* child is a Control that holds items */ }
+- Ensure using Avalonia.Controls.Templates; is present where ControlTemplate is referenced.

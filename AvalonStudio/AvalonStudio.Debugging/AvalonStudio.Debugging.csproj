@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <NoWarn>NU1701</NoWarn>
+	<NoWarn>NU1605</NoWarn>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AvaloniaEdit" Version="11.3.7" />
+    <AvaloniaResource Include="**\*.resx;**\*.xaml;Assets\*;" Exclude="bin\**;obj\**;**\*.xproj;packages\**;@(EmbeddedResource)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AvaloniaEdit" Version="11.3.7" />
+    <PackageReference Include="Avalonia" Version="11.3.7" />
+    <PackageReference Include="System.Composition" Version="9.0.9" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="AvaloniaEdit" Version="11.3.7" />
+    <ProjectReference Include="..\..\debugger-libs\Mono.Debugging\Mono.Debugging.csproj" />
+    <ProjectReference Include="..\AvalonStudio.Extensibility\AvalonStudio.Extensibility.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="AvaloniaEdit" Version="11.3.7" />
+    <Folder Include="Icons\" />
+  </ItemGroup>
+</Project>

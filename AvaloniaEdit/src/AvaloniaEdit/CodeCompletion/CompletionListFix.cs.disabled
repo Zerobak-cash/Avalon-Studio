@@ -1,0 +1,19 @@
+// CompletionListFix.cs - guidance and minimal shim to resolve CompletionList/CompletionWindowBase compile issues.
+// Recommendation applied by this shim:
+// - Ensure CompletionWindowBase derives from Popup only; move StyledElement-specific logic to a contained control.
+using Avalonia.Controls;
+using Avalonia.Controls.Primitives;
+
+namespace AvaloniaEdit.CodeCompletion
+{
+    // Minimal Popup-based base class to replace old dual-inheritance class
+    public class CompletionWindowBase : Popup
+    {
+        // Put child control for items inside the Popup.Child for compatibility.
+    }
+
+    // If CompletionListBox expected StyledElement, provide a simple control host.
+    public class CompletionListHost : Control
+    {
+    }
+}

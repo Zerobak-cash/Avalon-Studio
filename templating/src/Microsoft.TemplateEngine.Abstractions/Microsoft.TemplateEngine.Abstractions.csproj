@@ -1,0 +1,7 @@
+﻿<Project ToolsVersion="15.0" Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\..\Version.props" />
+  <PropertyGroup>
+    <TargetFrameworks>net10.0</TargetFrameworks>
+    <Description>Contracts for extending Template Engine</Description>
+  </PropertyGroup>
+</Project>

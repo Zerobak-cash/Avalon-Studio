@@ -1,0 +1,9 @@
+// Patch44: This is the previously disabled duplicate IShell/IPerspective file.
+// It is intentionally disabled to avoid duplicate-type compilation errors. Delete it after verifying the canonical IShell.cs.fixed file.
+#if false
+namespace AvalonStudio.Shell
+{
+    public interface IPerspective { void AddTool(object tool); void RemoveTool(object tool); void RemoveDock(object dock); }
+    public interface IShell { void Select(object item); void AddDocument(object doc); void RemoveDocument(object doc); void CreatePerspective(string name); }
+}
+#endif

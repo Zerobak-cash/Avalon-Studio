@@ -1,0 +1,9 @@
+TextView default parameter fix:
+- Replace method signatures like:
+    void Redraw(DispatcherPriority redrawPriority = DispatcherPriority.Render)
+  with:
+    void Redraw(DispatcherPriority? redrawPriority = null)
+    {
+        redrawPriority ??= DispatcherPriority.Render;
+    }
+- This avoids 'default parameter must be compile-time constant' errors.

@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\external\lsp\lsp.csproj" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="9.0.9" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.2.8" />
+    <ProjectReference Include="..\external\pngcs\pngcs.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views" />
+  </ItemGroup>
+  <Import Project="../../AvalonStudio.Common.Cleanup.targets" />
+</Project>

@@ -1,0 +1,3 @@
+// Patch44: Add nullable context to compat shim to silence CS8632 warnings.
+#nullable enable
+// existing shim content unchanged — this file only toggles nullable context at compile time.

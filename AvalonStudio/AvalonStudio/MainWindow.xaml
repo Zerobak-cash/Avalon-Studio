@@ -1,0 +1,52 @@
+﻿<cont:MetroWindow x:Class="AvalonStudio.MainWindow"
+             xmlns="https://github.com/avaloniaui"
+                      xmlns:cont="clr-namespace:AvalonStudio.Shell.Controls;assembly=AvalonStudio.Shell"
+                      xmlns:ide="clr-namespace:AvalonStudio.Studio;assembly=AvalonStudio.Studio"
+                      xmlns:i="clr-namespace:Avalonia.Xaml.Interactivity;assembly=Avalonia.Xaml.Interactivity"
+                      xmlns:id="clr-namespace:Dock.Avalonia;assembly=Dock.Avalonia"
+                      xmlns:shell="clr-namespace:AvalonStudio.Shell;assembly=AvalonStudio.Shell"
+                      xmlns:menu="clr-namespace:AvalonStudio.Shell.Extensibility.MainMenu.Views;assembly=AvalonStudio.Shell.Extensibility"
+                      xmlns:beh="clr-namespace:AvalonStudio.Utils.Behaviors;assembly=AvalonStudio.Utils"
+                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                      Icon="avares://AvalonStudio.Shell/Assets/logo-256.png"
+                      Title="AvalonStudio" MinWidth="800" MinHeight="600"
+                      FontFamily="{DynamicResource UiFont}" FontSize="12"
+                      Foreground="{DynamicResource ThemeForegroundBrush}" WindowState="Maximized" RenderOptions.BitmapInterpolationMode="HighQuality" UseLayoutRounding="True">
+    <cont:MetroWindow.TitleBarContent>
+        <menu:MainMenuView DataContext="{Binding Shell.MainMenu}" Margin="4 0 0 0"  Foreground="{DynamicResource ThemeForegroundBrush}" VerticalAlignment="Stretch" FontSize="13" />
+    </cont:MetroWindow.TitleBarContent>
+
+    <i:Interaction.Behaviors>
+        <beh:OpenCloseWindowBehavior DataContext="{Binding ModalDialog}" WindowType="{x:Type cont:ModalDialog}" IsOpen="{Binding ModalDialog.IsVisible}" />
+    </i:Interaction.Behaviors>
+
+    <cont:MetroWindow.Styles>
+        <Style Selector="Menu > MenuItem:selected /template/ Border#root">
+            <Setter Property="Background" Value="{DynamicResource ThemeControlMidBrush}"/>
+        </Style>
+
+        <Style Selector="Menu > MenuItem">
+            <Setter Property="Padding" Value="7 0"/>
+        </Style>
+
+        <Style Selector="MenuItem">
+            <Setter Property="BorderThickness" Value="0"/>
+        </Style>
+
+    </cont:MetroWindow.Styles>
+
+    <cont:MetroWindow.KeyBindings>
+        <KeyBinding Command="{Binding EnableDebugModeCommand}" Gesture="CTRL+SHIFT+D" />
+    </cont:MetroWindow.KeyBindings>
+
+    <Grid RowDefinitions="*,25" id:DockProperties.IsDropArea="True">
+
+        <shell:ShellView DataContext="{Binding Shell}" />
+
+        <Grid Grid.Row="1" Grid.ColumnSpan="5">
+            <cont:StatusBar Margin="0 2 0 0" DataContext="{Binding Shell.StatusBar}" />
+        </Grid>
+
+        <ide:QuickCommander Width="450" MaxHeight="500" DataContext="{Binding Studio.QuickCommander}" VerticalAlignment="Top" />
+    </Grid>
+</cont:MetroWindow>

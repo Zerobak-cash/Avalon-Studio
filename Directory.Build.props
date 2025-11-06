@@ -1,0 +1,7 @@
+<Project>
+  <ItemGroup>
+    <!-- exclude Microsoft.TemplateEngine.Cli sources and project refs -->
+    <Compile Remove="templating/src/Microsoft.TemplateEngine.Cli\**\*.cs" />
+    <ProjectReference Remove="templating/src/Microsoft.TemplateEngine.Cli\**\*.csproj" />
+  </ItemGroup>
+</Project>

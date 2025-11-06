@@ -1,0 +1,9 @@
+using Avalonia;
+OnPropertyChanged migration notes:
+- Replace signatures like:
+    protected override void OnPropertyChanged(AvaloniaPropertyChangedEventArgs change)
+  with:
+    protected override void OnPropertyChanged(AvaloniaPropertyChangedEventArgs change)
+- Inside, use change.GetNewValue<T>() to retrieve typed values.
+- Example sed (review before running):
+  perl -0777 -pe "s/protected\s+override\s+void\s+OnPropertyChanged<([^>]+)>\(AvaloniaPropertyChangedEventArgs<\1>\s+change\)/protected override void OnPropertyChanged(AvaloniaPropertyChangedEventArgs change)/gs" -i <file.cs>

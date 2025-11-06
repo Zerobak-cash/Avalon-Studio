@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\..\Version.props" />
+
+  <PropertyGroup>    
+    <TargetFramework>net10.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Update="**/*.json" CopyToOutputDirectory="Always" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="TemplateInstallTests/TestTemplates/**/*" CopyToOutputDirectory="Always" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.14.1" />
+    <PackageReference Include="xunit" Version="2.9.3" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.9.3" />
+    <DotNetCliToolReference Include="dotnet-xunit" Version="2.9.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Microsoft.TemplateEngine.Edge\Microsoft.TemplateEngine.Edge.csproj" />
+    <ProjectReference Include="..\Microsoft.TemplateEngine.EndToEndTestHarness\Microsoft.TemplateEngine.EndToEndTestHarness.csproj" />
+    <ProjectReference Include="..\Microsoft.TemplateEngine.TestHelper\Microsoft.TemplateEngine.TestHelper.csproj" />
+    <ProjectReference Include="..\Microsoft.TemplateEngine.Utils.UnitTests\Microsoft.TemplateEngine.Utils.UnitTests.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{82a7f48d-3b50-4b1e-b82e-3ada8210c358}" />
+  </ItemGroup>
+</Project>

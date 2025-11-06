@@ -1,0 +1,12 @@
+// Patch41: Same fix for ManagedCallback2Shadow
+using System;
+namespace AvalonStudio.CorApi.Portable
+{
+    public class ManagedCallback2Shadow
+    {
+        protected Vtbl Vtbl { get; set; }
+        public class Vtbl
+        {
+        }
+    }
+}

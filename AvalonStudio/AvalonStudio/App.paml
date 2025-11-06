@@ -1,0 +1,98 @@
+﻿<Application x:Class="AvalonStudio.App"
+             xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:idc="clr-namespace:Dock.Avalonia.Controls;assembly=Dock.Avalonia"
+             xmlns:id="clr-namespace:Dock.Model;assembly=Dock.Model"
+             xmlns:Documents="clr-namespace:AvaloniaDemo.ViewModels.Documents;assembly=AvalonStudio"
+             xmlns:Tools="clr-namespace:AvaloniaDemo.ViewModels.Tools;assembly=AvalonStudio"
+             xmlns:cont="clr-namespace:AvalonStudio.Controls;assembly=AvalonStudio.Shell.Extensibility"
+             xmlns:shell="clr-namespace:AvalonStudio.Shell.Controls;assembly=AvalonStudio.Shell"    
+             xmlns:Views="clr-namespace:AvaloniaDemo.ViewModels.Views;assembly=AvalonStudio.Shell">
+  <Application.Styles>
+    <StyleInclude Source="avares://Avalonia.Themes.Default/DefaultTheme.xaml"/>
+    <StyleInclude Source="avares://Avalonia.Controls.DataGrid/Themes/Default.xaml"/>
+    <StyleInclude Source="avares://AvalonStudio.Shell/Themes/BaseDark.xaml"/>
+    <StyleInclude Source="avares://AvalonStudio.Shell/Themes/Accents/DarkAccent.xaml"/>
+    <StyleInclude Source="avares://AvalonStudio.Shell/Icons/Icons.xaml"/>
+    <StyleInclude Source="avares://AvalonStudio.Shell/Controls/MetroWindowTheme.paml" />
+    <StyleInclude Source="avares://AvalonStudio.Shell.Extensibility/Controls/ControlTheme.paml" />
+    <StyleInclude Source="avares://AvalonStudio.Shell/Styles/GlobalStyles.xaml" />
+    <StyleInclude Source="avares://AvaloniaEdit/AvaloniaEdit.xaml" />
+    <StyleInclude Source="avares://AvalonStudio.Controls.Editor/CodeEditor.xaml" />
+    <StyleInclude Source="avares://AvalonStudio.Debugging/Icons/Icons.xaml" />
+    <StyleInclude Source="avares://AvalonStudio.Controls.Standard/SolutionExplorer/Icons/Icons.xaml" />
+    <StyleInclude Source="avares://AvalonStudio.Languages.Xaml/AvaloniaPreviewer.xaml" />
+    <StyleInclude Source="avares://Dock.Avalonia.Themes.Default/DefaultTheme.axaml"/>
+    <StyleInclude Source="avares://VtNetCore.Avalonia/VirtualTerminalControl.xaml" />
+
+    <Style Selector="shell|MetroWindow /template/ Button#minimiseButton">
+      <Setter Property="Content">
+        <Template>
+          <Panel Margin="4" Height="8" Width="8">
+            <DrawingPresenter>
+              <DrawingGroup>
+                <DrawingGroup.Children>
+                  <GeometryDrawing Brush="#00FFFFFF" Geometry="F1M16,16L0,16 0,0 16,0z" />
+                  <GeometryDrawing Brush="{DynamicResource ThemeForegroundBrush}" Geometry="F1M15,15L1,15 1,10 15,10z" />
+                  <GeometryDrawing Brush="{DynamicResource ThemeForegroundBrush}" Geometry="F1M14,11L2,11 2,14 14,14z" />
+                </DrawingGroup.Children>
+              </DrawingGroup>
+            </DrawingPresenter>
+          </Panel>
+        </Template>
+      </Setter>
+    </Style>
+    <Style Selector="shell|MetroWindow /template/ Button#restoreButton">
+      <Setter Property="Content">
+        <Template>
+          <Panel Margin="4">
+            <Path Height="8" Width="8" Stretch="Uniform" UseLayoutRounding="False" Fill="{DynamicResource ThemeForegroundBrush}" Data="M4,4H20V20H4V4M6,8V18H18V8H6Z" />
+          </Panel>
+        </Template>
+      </Setter>
+    </Style>
+    <Style Selector="shell|MetroWindow:maximised /template/ Button#restoreButton">
+      <Setter Property="Content">
+        <Template>
+          <Panel Margin="4">
+            <Path Height="8"
+                  Width="8"
+                  Stretch="Uniform"
+                  UseLayoutRounding="False"
+                  Fill="{DynamicResource ThemeForegroundBrush}"
+                  Data="M4,8H8V4H20V16H16V20H4V8M16,8V14H18V6H10V8H16M6,12V18H14V12H6Z" />
+          </Panel>
+        </Template>
+      </Setter>
+    </Style>
+    <Style Selector="shell|MetroWindow /template/ Button#closeButton">
+      <Setter Property="Content">
+        <Template>
+          <Panel Margin="4">
+            <Path
+              Height="8"
+              Width="8"
+              Stretch="Uniform"
+              UseLayoutRounding="False"
+              Data="M13.46,12L19,17.54V19H17.54L12,13.46L6.46,19H5V17.54L10.54,12L5,6.46V5H6.46L12,10.54L17.54,5H19V6.46L13.46,12Z"
+              Fill="{DynamicResource ThemeForegroundBrush}" />
+          </Panel>
+        </Template>
+      </Setter>
+    </Style>
+  </Application.Styles>  
+  <Application.DataTemplates>
+    <!-- Views -->
+    <DataTemplate DataType="Views:MainView" x:DataType="Views:MainView">
+      <Grid>
+        <ContentControl Content="{CompiledBinding ActiveDockable}"/>
+      </Grid>
+    </DataTemplate>
+    <DataTemplate DataType="id:IDockable" x:DataType="id:IDockable">
+      <cont:ViewModelViewHost DataContext="{CompiledBinding Context}" />
+    </DataTemplate>
+  </Application.DataTemplates>
+  <NativeMenu.Menu>
+    <NativeMenu />
+  </NativeMenu.Menu>
+</Application>

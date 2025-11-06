@@ -1,0 +1,18 @@
+// Patch45: Clean-up duplicate members and ensure 'partial' modifiers present.
+#pragma warning disable CS8618, CS8632
+using System;
+namespace Mono.Debugging.Evaluation
+{
+    // Ensure partial keyword exists to merge with other partial declarations.
+    public partial class EvaluatorExceptionThrownException : Exception
+    {
+        // Remove duplicate constructor here — canonical ctor lives in EvaluationCompat.cs
+    }
+
+    public partial class EvaluationObjectValue
+    {
+        // Value property removed here to avoid duplicate definition. Keep in EvaluationCompat.cs.
+        // public object? Value { get; set; } // removed
+    }
+}
+#pragma warning restore CS8618, CS8632

@@ -1,0 +1,14 @@
+
+<Project>
+  <!-- This props file removes problematic compat/partial files that duplicate types
+       and cause 'missing partial modifier' and duplicate-member errors when building under net10.
+       It is intentionally conservative: removes files under Mono.Debugging.Evaluation/Compat
+       and the EvaluationPartials_Force and EvaluationStubs_Partial files which are causing duplicates. -->
+  <ItemGroup>
+    <Compile Remove="Mono.Debugging.Evaluation/Compat\**\*.cs" />
+    <Compile Remove="Mono.Debugging.Evaluation\EvaluationPartials_Force.cs" />
+    <Compile Remove="Mono.Debugging.Evaluation\Compat\EvaluationCompat.cs" />
+    <Compile Remove="Mono.Debugging.Evaluation\Compat\EvaluationCompat_Partial.cs" />
+    <Compile Remove="Mono.Debugging.Evaluation\Compat\EvaluationStubs_Partial.cs" />
+  </ItemGroup>
+</Project>

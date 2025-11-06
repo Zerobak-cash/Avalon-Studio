@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net10.0</TargetFrameworks>
+    <NoWarn>NU1701</NoWarn>
+	<NoWarn>NU1605</NoWarn>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Mono.Debugging.Evaluation/EvaluationPartials_Force.cs" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.14.0" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="4.14.0" />
+  </ItemGroup>
+
+  <!-- Temporarily exclude NRefactory-based expression evaluator (ICSharpCode/NRefactory) -->
+<ItemGroup>
+    <Compile Include="Mono.Debugging.Evaluation/EvaluationPartials_Force.cs" />
+  <!-- adjust paths if your files are in a different folder -->
+  <Compile Remove="Mono.Debugging.Evaluation\NRefactoryExpressionEvaluator.cs" />
+  <Compile Remove="Mono.Debugging.Evaluation\NRefactoryExpressionEvaluatorVisitor.cs" />
+  <Compile Remove="Mono.Debugging.Evaluation\NRefactoryExpressionResolverVisitor.cs" />
+  <Compile Remove="Mono.Debugging.Evaluation\NRefactoryExtensions.cs" />
+  <Compile Remove="Mono.Debugging.Evaluation\LambdaBodyOutputVisitor.cs" />
+  <!-- any other Mono.Debugging.Evaluation files that reference ICSharpCode -->
+  <Compile Remove="Mono.Debugging.Evaluation\*.cs" />
+</ItemGroup>
+
+<ItemGroup>
+    <Compile Include="Mono.Debugging.Evaluation/EvaluationPartials_Force.cs" />
+</ItemGroup>
+
+
+
+  <Import Project="../../AvalonStudio.Common.Cleanup.targets" />
+</Project>

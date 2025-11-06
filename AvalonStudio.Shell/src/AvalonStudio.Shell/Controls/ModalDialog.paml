@@ -1,0 +1,20 @@
+﻿<controls:MetroWindow x:Class="AvalonStudio.Shell.Controls.ModalDialog"
+             xmlns="https://github.com/avaloniaui"
+              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+              xmlns:controls="clr-namespace:AvalonStudio.Shell.Controls;assembly=AvalonStudio.Shell"                            
+              xmlns:cont="clr-namespace:AvalonStudio.Controls;assembly=AvalonStudio.Shell.Extensibility"              
+              Background="{DynamicResource ThemeBackgroundBrush}"
+              Icon="avares://AvalonStudio.Shell/Assets/logo-256.png"
+              Title="{Binding Title}"
+              FontFamily="{DynamicResource UiFont}" FontSize="14" Foreground="{DynamicResource ThemeForegroundBrush}"
+              RenderOptions.BitmapInterpolationMode="HighQuality" UseLayoutRounding="True">
+  <DockPanel LastChildFill="True" Margin="0">
+
+    <StackPanel Orientation="Horizontal" Spacing="20" HorizontalAlignment="Right" DockPanel.Dock="Bottom" Margin="8 0 8 8">
+      <Button Command="{Binding CancelCommand}" IsVisible="{Binding CancelButtonVisible}" Content="Cancel" Width="100" Height="30" />
+      <Button Content="OK" Command="{Binding OKCommand}" IsVisible="{Binding OKButtonVisible}" Width="100" Height="30"/>
+    </StackPanel>
+
+    <cont:ViewModelViewHost DataContext="{Binding }" Margin="8" />
+  </DockPanel>
+</controls:MetroWindow>

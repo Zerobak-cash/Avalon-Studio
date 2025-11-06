@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  
+  <!-- TODO Change Product Id every time a new version is released. -->
+	<Product Id="{F09094AA-3D75-4D62-98E7-AC84908CA3BB}" 
+           Name="!(loc.ProductName)" Language="1033" 
+           Version="$(var.BuildVersion)" 
+           Manufacturer="VitalElement" 
+           UpgradeCode="b9bca33e-4d27-49a0-b633-ed6a628a6615">
+		<Package InstallerVersion="200" 
+             Compressed="yes" 
+             InstallScope="perMachine"/>
+
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." Schedule="afterInstallInitialize" />
+		<MediaTemplate EmbedCab="yes" />
+
+    <Icon Id="app.icon" SourceFile="$(var.AvalonStudio.ProjectDir)..\AvalonStudio.Controls.Standard\AboutScreen\Assets\logo-256.ico" />
+
+    <Property Id="ARPPRODUCTICON">app.icon</Property>
+    <Property Id="ARPURLINFOABOUT">http://github.com/VitalElement/AvalonStudio</Property>
+
+    <WixVariable Id="WixUILicenseRtf" Value="$(var.ProjectDir)\Assets\License.rtf" />
+
+    <UIRef Id="WixUI_Minimal" />
+
+		<Feature Id="ProductFeature" Title="AvalonStudio" Level="1">
+			<ComponentGroupRef Id="ProductComponents" />
+      <ComponentGroupRef Id="PublishedComponentsAS" />
+      <ComponentGroupRef Id="PublishedComponentsAB" />
+		</Feature>
+	</Product>
+</Wix>

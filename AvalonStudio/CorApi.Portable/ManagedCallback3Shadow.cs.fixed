@@ -1,0 +1,15 @@
+// Patch42: Fix ManagedCallback3Shadow.Vtbl override issue by removing 'override' keyword.
+using System;
+namespace AvalonStudio.CorApi.Portable
+{
+    public class ManagedCallback3Shadow
+    {
+        // Previously used 'protected override Vtbl Vtbl' which no longer matches the generated base.
+        protected Vtbl Vtbl { get; set; }
+
+        public class Vtbl
+        {
+            // Vtbl members...
+        }
+    }
+}

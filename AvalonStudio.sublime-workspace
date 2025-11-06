@@ -1,0 +1,460 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"Vi",
+				"ViewModels"
+			],
+			[
+				"Ma",
+				"MainWindowViewModel"
+			],
+			[
+				"Mai",
+				"MainWindowViewModel"
+			],
+			[
+				"S",
+				"SplitView"
+			],
+			[
+				"bl",
+				"blank"
+			],
+			[
+				"e",
+				"else\tElse"
+			],
+			[
+				"I",
+				"Interactivity"
+			],
+			[
+				"B",
+				"Button"
+			],
+			[
+				"O",
+				"Opacity"
+			],
+			[
+				"ani",
+				"Animation"
+			],
+			[
+				"A",
+				"Animation"
+			],
+			[
+				"Con",
+				"Controls"
+			],
+			[
+				"Av",
+				"Avalonia"
+			],
+			[
+				"v",
+				"void"
+			],
+			[
+				"M",
+				"FromMilliseconds"
+			],
+			[
+				"C",
+				"Children"
+			],
+			[
+				"pr",
+				"private"
+			],
+			[
+				"Spl",
+				"SplitView"
+			],
+			[
+				"F",
+				"FindControl<>"
+			],
+			[
+				"T",
+				"Transitions"
+			],
+			[
+				"sta",
+				"static"
+			],
+			[
+				"R",
+				"Read"
+			],
+			[
+				"Wr",
+				"WriteLine"
+			],
+			[
+				"Read",
+				"ReadLine"
+			],
+			[
+				"na",
+				"namespace"
+			],
+			[
+				"ToI",
+				"ToInt32"
+			],
+			[
+				"re",
+				"result"
+			],
+			[
+				"t",
+				"\"translate_tabs_to_spaces\""
+			],
+			[
+				"ta",
+				"\"tab_size\""
+			],
+			[
+				"tab_",
+				"\"tab_size\""
+			],
+			[
+				"jd936x",
+				"jd9366_wxga_dsi_vdo_karnak_fiti_kd_lcm_drv"
+			],
+			[
+				"fi",
+				"filepath"
+			],
+			[
+				"dtb",
+				"dtb_filename"
+			],
+			[
+				"len",
+				"len(positions) == 0:"
+			],
+			[
+				"d",
+				"dtb_next + 1"
+			],
+			[
+				"c",
+				"content.find(DTB_HEADER)"
+			],
+			[
+				"pos",
+				"positions.append(dtb_next)"
+			],
+			[
+				"whi",
+				"while dtb_next != -1:"
+			],
+			[
+				"co",
+				"content"
+			],
+			[
+				"as",
+				"as fp:"
+			],
+			[
+				"file",
+				"filename"
+			],
+			[
+				"DTB_HEADER",
+				"DTB_HEADER ="
+			],
+			[
+				"__version",
+				"__version__ = \""
+			],
+			[
+				"argpa",
+				"argparse import"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"pa",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Discover Packages"
+			],
+			[
+				"pieces",
+				"Preferences: Terminal OS Specific Settings"
+			],
+			[
+				"package",
+				"Preferences: Browse Packages"
+			],
+			[
+				"lsp",
+				"LSP: Enable Language Server Globally"
+			],
+			[
+				"preferences lsp",
+				"Preferences: LSP-OmniSharp Settings"
+			],
+			[
+				"package in",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"p",
+				"Package Control: Install Package"
+			],
+			[
+				"l",
+				"LSP: Enable Language Server in Project"
+			],
+			[
+				"pac",
+				"Package Control: List Packages"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 214.0,
+		"history":
+		[
+			"LSP:Enable",
+			"LSP:Enable Language Server"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/Zerobak/AvalonStudio"
+	],
+	"file_history":
+	[
+		"/home/Zerobak/AvalonStudio/AvalonStudio/Avalonia.Designer.HostApp/obj/project.assets.json",
+		"/home/Zerobak/AvalonStudio/nuget.config",
+		"/home/Zerobak/MyWebApp/Program.cs",
+		"/home/Zerobak/blank/MainWindow.axaml",
+		"/home/Zerobak/blank/ViewModels/MainWindowViewModel.cs",
+		"/home/Zerobak/Downloads/sub/E/SublimeText4License-main/Sublime Text 4 License.py",
+		"/home/Zerobak/blank/MainWindow.axaml.cs",
+		"/home/Zerobak/test/ViewModels/MainWindowViewModel.cs",
+		"/home/Zerobak/test/Program.cs",
+		"/home/Zerobak/test/MainWindow.axaml.cs",
+		"/home/Zerobak/blank/blank.sublime-project",
+		"/home/Zerobak/.config/sublime-text/Packages/User/Preferences.sublime-settings",
+		"/home/Zerobak/.config/sublime-text/Packages/Default/Preferences.sublime-settings",
+		"/home/Zerobak/.config/sublime-text/Packages/AvaloniaXAML/AvaloniaXAML.sublime-syntax",
+		"/home/Zerobak/air-ui/MainWindow.axaml.cs",
+		"/home/Zerobak/air-ui/App.axaml.cs",
+		"/home/Zerobak/air-ui/Program.cs",
+		"/home/Zerobak/aircrack/MainWindow.axaml.cs",
+		"/home/Zerobak/aircrack/aircrack.csproj",
+		"/home/Zerobak/aircrack/MainWindow.axaml",
+		"/home/Zerobak/test/MainWindow.axaml",
+		"/home/Zerobak/test/App.axaml.cs",
+		"/home/Zerobak/aircrack/App.axaml.cs",
+		"/home/Zerobak/.config/sublime-text/Packages/User/AvaloniaAxmal.sublime-syntax",
+		"/home/Zerobak/test/App.axaml",
+		"/home/Zerobak/Downloads/sub/Keyboard-Typing-WinForms-main/Program.cs",
+		"/home/Zerobak/Project/Program.cs",
+		"/home/Zerobak/download-script.py",
+		"/home/Zerobak/API/Program.cs",
+		"/home/Zerobak/Project/api.cs",
+		"/home/Zerobak/video_downloader.py",
+		"/home/Zerobak/C#.sublime-build",
+		"/home/Zerobak/.config/sublime-text/Packages/User/c#.sublime-build",
+		"/home/Zerobak/.config/sublime-text/Packages/SideBarEnhancements/Side Bar.sublime-settings",
+		"/home/Zerobak/.config/sublime-text/Packages/User/Side Bar.sublime-settings",
+		"/home/Zerobak/Project/Program.sublime-project",
+		"/home/Zerobak/Program/Program.cs",
+		"/home/Zerobak/Program/Calculator.cs"
+	],
+	"find":
+	{
+		"height": 57.0
+	},
+	"find_in_files":
+	{
+		"height": 163.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"netcoreapp2.0"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"use_gitignore": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 51.0
+	},
+	"input":
+	{
+		"height": 61.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.LSP Log Panel":
+	{
+		"height": 0.0
+	},
+	"output.SublimeLinter":
+	{
+		"height": 0.0
+	},
+	"output.diagnostics":
+	{
+		"height": 0.0
+	},
+	"output.exec":
+	{
+		"height": 266.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/User/C#.sublime-build",
+	"project": "AvalonStudio.sublime-project",
+	"replace":
+	{
+		"height": 110.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+		"lsp_show_inlay_hints": false
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 262.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

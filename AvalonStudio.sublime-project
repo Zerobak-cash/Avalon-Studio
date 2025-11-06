@@ -1,0 +1,22 @@
+{
+    "folders":
+    [
+        {
+            "path": "."
+        }
+    ],
+
+    "build_systems":
+    [
+        {
+            "name": "Run ConsoleApp",
+            "cmd": ["/home/Zerobak/.dotnet/dotnet", "run", "--project", "/home/Zerobak/AvalonStudio"],
+            "working_dir": "/home/Zerobak/AvalonStudio"
+        }
+    ],
+
+    "settings":
+    {
+
+    }
+}

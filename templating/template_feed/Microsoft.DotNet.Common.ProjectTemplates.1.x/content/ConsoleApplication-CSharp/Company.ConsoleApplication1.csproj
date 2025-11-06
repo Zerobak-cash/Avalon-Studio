@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework Condition="'$(Framework)' != 'net10.0' AND '$(TargetFrameworkOverride)' == ''">net10.0</TargetFramework>
+    <TargetFramework Condition="'$(Framework)' == 'net10.0' AND '$(TargetFrameworkOverride)' == ''">net10.0</TargetFramework>
+    <TargetFramework Condition="'$(TargetFrameworkOverride)' != ''">TargetFrameworkOverride</TargetFramework>
+  </PropertyGroup>
+
+  <Import Project="../../AvalonStudio.Common.Cleanup.targets" />
+</Project>

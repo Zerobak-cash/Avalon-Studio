@@ -1,0 +1,1 @@
+Replace OnPointerLeave(PointerEventArgs e) with OnPointerExited(PointerEventArgs e) and call base.OnPointerExited(e).

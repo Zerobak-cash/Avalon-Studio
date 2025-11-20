@@ -1,0 +1,21 @@
+// Patch45: Strip duplicate members from this force partial.
+#pragma warning disable CS8618, CS8632
+using System;
+namespace Mono.Debugging.Evaluation
+{
+    public partial class EvaluationStatistics
+    {
+        // Duplicate 'Evaluations' property removed here.
+    }
+
+    public partial class ExpressionEvaluator
+    {
+        // Duplicate Evaluate removed here.
+    }
+
+    public partial class EvaluationObjectValue
+    {
+        // Duplicate ToString removed here.
+    }
+}
+#pragma warning restore CS8618, CS8632

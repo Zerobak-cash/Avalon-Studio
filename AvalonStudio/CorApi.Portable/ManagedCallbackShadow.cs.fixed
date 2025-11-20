@@ -1,0 +1,16 @@
+// Patch41: Fix invalid 'override' on Vtbl when base no longer defines it.
+using System;
+namespace AvalonStudio.CorApi.Portable
+{
+    public class ManagedCallbackShadow
+    {
+        // Previously used 'protected override Vtbl Vtbl' but base signature changed in newer corapi generator.
+        // Make it a plain protected property to avoid CS0115.
+        protected Vtbl Vtbl { get; set; }
+
+        public class Vtbl
+        {
+            // Vtbl content...
+        }
+    }
+}

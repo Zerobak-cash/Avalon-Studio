@@ -1,0 +1,8 @@
+// ObjectValue_Fix.txt
+// If you get ambiguous ObjectValue between Mono.Debugging.Client and Mono.Debugging.Evaluation,
+// edit these two lines in:
+//   debugger-libs/Mono.Debugging/Mono.Debugging.Backend/IObjectValueSource.cs
+// Replace 'ObjectValue' with 'Mono.Debugging.Client.ObjectValue' where appropriate.
+//
+# Example sed to run from repo root:
+# sed -i 's/\bObjectValue\b/Mono.Debugging.Client.ObjectValue/g' debugger-libs/Mono.Debugging/Mono.Debugging.Backend/IObjectValueSource.cs

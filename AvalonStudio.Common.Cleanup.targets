@@ -1,0 +1,8 @@
+<Project>
+  <ItemGroup>
+    <Compile Remove="**/*.revert.cs" />
+    <Compile Remove="**/*.fix.cs" />
+    <Compile Remove="**/*_Partial.cs" />
+    <Compile Remove="**/*_Force.cs" />
+  </ItemGroup>
+</Project>

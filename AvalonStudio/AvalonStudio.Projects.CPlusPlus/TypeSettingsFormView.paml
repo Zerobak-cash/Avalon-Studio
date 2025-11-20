@@ -1,0 +1,7 @@
+﻿<UserControl x:Class="AvalonStudio.Projects.CPlusPlus.TypeSettingsFormView"
+             xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <StackPanel HorizontalAlignment="Left">    
+    <DropDown Items="{Binding ProjectTypeOptions}" SelectedItem="{Binding ProjectType, Mode=TwoWay}" Width="150" />
+  </StackPanel>
+</UserControl>

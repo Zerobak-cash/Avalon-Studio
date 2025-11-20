@@ -1,0 +1,14 @@
+// Patch44: Remove duplicate members from this partial to avoid CS0102/CS0111.
+using System;
+namespace Mono.Debugging.Evaluation
+{
+    public partial class EvaluatorExceptionThrownException : Exception
+    {
+        // Constructor removed here to prevent duplicate definition — keep constructor in EvaluationCompat.cs
+    }
+
+    public partial class EvaluationObjectValue
+    {
+        // Value removed here to avoid duplicate property—keep canonical property in EvaluationCompat.cs
+    }
+}

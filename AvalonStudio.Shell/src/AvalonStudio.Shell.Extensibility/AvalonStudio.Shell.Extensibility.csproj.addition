@@ -1,0 +1,4 @@
+<!-- Patch44: Add Dock.Model.Mvvm so IDock/IDockable/IRootDock types resolve -->
+<ItemGroup>
+  <PackageReference Include="Dock.Model.Mvvm" Version="11.0.5" />
+</ItemGroup>

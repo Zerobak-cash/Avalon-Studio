@@ -1,0 +1,22 @@
+// Patch44: Canonical IShell/IPerspective file update — add Dock.Model.Mvvm using and enable nullable safety.
+using System;
+using Dock.Model.Mvvm;
+#nullable enable
+
+namespace AvalonStudio.Shell
+{
+    public interface IPerspective
+    {
+        void AddTool(object tool);
+        void RemoveTool(object tool);
+        void RemoveDock(IDock? dock);
+    }
+
+    public interface IShell
+    {
+        void Select(object item);
+        void AddDocument(object doc);
+        void RemoveDocument(object doc);
+        void CreatePerspective(string name);
+    }
+}

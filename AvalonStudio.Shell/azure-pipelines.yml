@@ -1,0 +1,34 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+  branches:
+    include: ['*']
+  tags:
+    include: ['*']
+
+pool:
+  vmImage: 'windows-latest'
+
+steps:
+  - task: CmdLine@2
+    displayName: 'Install Nuke'
+    inputs:
+      script: |
+       dotnet tool install --global Nuke.GlobalTool --version 9.0.4
+
+  - task: CmdLine@2
+    displayName: 'Run Nuke'
+    inputs:
+      script: |
+        set PATH=%PATH%;%USERPROFILE%\.dotnet\tools
+        nuke --target CiAzureWindows --configuration Release
+
+  - task: PublishBuildArtifacts@1
+    inputs:
+      PathtoPublish: 'artifacts/nuget'
+      ArtifactName: 'nuget'
+      publishLocation: 'Container'
+

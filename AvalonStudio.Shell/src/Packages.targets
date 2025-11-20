@@ -1,0 +1,21 @@
+<Project>
+
+  <ItemGroup>
+    <PackageReference Update="Avalonia" Version="$(AvaloniaVersion)" />
+    <PackageReference Update="Avalonia.Desktop" Version="$(AvaloniaVersion)" />
+    <PackageReference Update="Avalonia.ReactiveUI" Version="$(AvaloniaVersion)" />
+    <PackageReference Update="Avalonia.Xaml.Behaviors" Version="11.3.0.6" />
+    <PackageReference Update="Avalonia.Xaml.Interactions" Version="11.3.0.6" />
+    <PackageReference Update="Avalonia.Xaml.Interactivity" Version="11.3.0.6" />
+    <PackageReference Update="Avalonia.Xaml.Interactions.Custom" Version="11.3.0.6" />
+    <PackageReference Update="Newtonsoft.Json" Version="$(NewtonsoftJsonVersion)" />
+    <PackageReference Update="ReactiveUI" Version="$(ReactiveUIVersion)" />
+    <PackageReference Update="Dock.Avalonia" Version="$(DockVersion)" />
+    <PackageReference Update="Dock.Model.ReactiveUI" Version="$(DockVersion)" />
+    <PackageReference Update="Dock.Avalonia.Themes.Default" Version="$(DockVersion)" />
+    <PackageReference Update="Dock.Avalonia.Themes.Metro" Version="$(DockVersion)" />
+    <PackageReference Update="System.Composition" Version="$(SystemCompositionVersion)" />
+    <PackageReference Update="System.Composition.AttributedModel" Version="$(SystemCompositionVersion)" />
+  </ItemGroup>
+
+</Project>

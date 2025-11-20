@@ -1,0 +1,22 @@
+{
+    "folders":
+    [
+        {
+            "path": "."
+        }
+    ],
+
+    "build_systems":
+    [
+        {
+            "name": "Run Avalonia App",
+            "cmd": ["dotnet", "run", "--project", "/home/Zerobak/Music/Avalon-Studio/AvalonStudio/AvalonStudio"],
+            "working_dir": "/home/Zerobak/Music/Avalon-Studio/AvalonStudio/AvalonStudio"
+        }
+    ],
+
+    "settings":
+    {
+        
+    }
+}

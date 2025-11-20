@@ -1,0 +1,22 @@
+// Patch42: Remove duplicate members that caused CS0102/CS0111; these members exist in other partial files.
+using System;
+namespace Mono.Debugging.Evaluation
+{
+    public partial class EvaluationStatistics
+    {
+        // Remove duplicate 'Evaluations' property here if already defined elsewhere.
+        // public int Evaluations { get; set; }  // removed to avoid duplicate definition
+    }
+
+    public partial class ExpressionEvaluator
+    {
+        // Remove duplicate Evaluate overloads here; keep single central implementation in another partial.
+        // public object Evaluate(string expr) => null!; // removed
+    }
+
+    public partial class EvaluationObjectValue
+    {
+        // Remove duplicate ToString if already implemented elsewhere.
+        // public override string ToString() => base.ToString();
+    }
+}

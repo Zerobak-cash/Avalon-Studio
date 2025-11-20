@@ -1,0 +1,10 @@
+using Avalonia;
+// OnPropertyChanged_Migration.txt
+// Replace generic overrides like:
+//   protected override void OnPropertyChanged(AvaloniaPropertyChangedEventArgs change)
+// With:
+//   protected override void OnPropertyChanged(AvaloniaPropertyChangedEventArgs change)
+// And inside, use change.GetNewValue<T>() to read typed value.
+//
+# Example sed (careful, review changes):
+# perl -0777 -pe "s/protected\s+override\s+void\s+OnPropertyChanged<([^>]+)>\(AvaloniaPropertyChangedEventArgs<\1>\s+change\)/protected override void OnPropertyChanged(AvaloniaPropertyChangedEventArgs change)/g" -i <file.cs>

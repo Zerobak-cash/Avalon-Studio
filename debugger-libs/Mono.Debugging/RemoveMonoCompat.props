@@ -1,0 +1,8 @@
+<Project>
+  <ItemGroup>
+    <Compile Remove="Mono.Debugging.Evaluation/Compat\**\*.cs" />
+    <Compile Remove="Mono.Debugging.Evaluation\EvaluationPartials_Force.cs" />
+    <Compile Remove="Mono.Debugging.Evaluation\Compat\EvaluationCompat*.cs" />
+    <Compile Remove="Mono.Debugging.Evaluation\Compat\EvaluationStubs_Partial.cs" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,15 @@
+image: vitalelement/avalonci:latest
+before_script:
+    # Create symlinks for nuget.
+  - mkdir -p /cache/.nuget
+  - ln -s /cache/.nuget ~/.nuget
+
+AvalonStudio:
+  script:     
+  # update all submodules.
+  - git submodule sync --recursive
+  - git submodule update --init --recursive
+  - dotnet --info
+  - ./build.sh
+  - cd ./packages
+  - ./package-debian.sh
